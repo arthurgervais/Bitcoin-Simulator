@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bitcoin Simulator - Installation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Bitcoin Simulator</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="get_started.html">Get Started</a></li>
+								<li><a href="Installation.html">Installation</a></li>
+								<li><a href="use_it.html">Use it</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Installation Guide</h2>
+								<p>Install and start playing immediately.</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+									<h3 class="major" style="font-size: 1.6em">Installation Steps</h3>
+									<ol style="font-size: 1.2em">
+										<li>Clone the <a href="https://github.com/vthglyk/Bitcoin-Simulation">Bitcoin Simulator</a>.</li>
+										<li>The Bitcoin Simulator is built on <b>ns3</b> and it has been tested with versions 3.24 and 3.25.
+											So, go to the <a href="https://www.nsnam.org/">official site</a> and grab a suitable release. Detailed installation instructions
+											for various platforms can be found <a href="https://www.nsnam.org/wiki/Installation">here</a>.</li>
+										<li>For exhanging block messages, <b>rapidjson</b> is used. Download it from  <a href="https://github.com/miloyip/rapidjson">here</a>.</li>
+										<li>Create a new directory named <i>rapidjson</i> under <i>ns-allinone-3.xx/ns-3.xx</i>.</li>
+										<li>Copy the contents of the directory <i>include/rapidjson</i> (from the downloaded rapidjson project in step 2)
+  										    to the newly created rapidjson folder (<i>ns-allinone-3.xx/ns-3.xx/rapidjson</i>)</li>
+										<li>Update the <b>ns-allinone-3.xx/ns-3.xx/src/applications/wscript</b>.
+											<ul>
+												<li> Add the following lines in <b>module.source</b>:
+													<pre><code>'model/bitcoin.cc',
+'model/bitcoin-node.cc',
+'model/bitcoin-miner.cc',
+'model/bitcoin-simple-attacker.cc',
+'model/bitcoin-selfish-miner.cc',
+'model/bitcoin-selfish-miner-trials.cc',
+'helper/bitcoin-topology-helper.cc',
+'helper/bitcoin-node-helper.cc',
+'helper/bitcoin-miner-helper.cc'					</code></pre>
+												</li>
+												<li> Add the following lines in <b>headers.source</b>:
+													<pre><code>'model/bitcoin.h',
+'model/bitcoin-node.h',
+'model/bitcoin-miner.h',
+'model/bitcoin-simple-attacker.h',
+'model/bitcoin-selfish-miner.h',
+'model/bitcoin-selfish-miner-trials.h',
+'helper/bitcoin-topology-helper.h',
+'helper/bitcoin-node-helper.h',
+'helper/bitcoin-miner-helper.h'					</code></pre>
+												</li>
+											</ul>
+										</li>
+										<li>Update the <b>ns-allinone-3.xx/ns-3.xx/src/internet/wscript</b>.
+											<ul>
+												<li> Add the following line in <b>module.source</b>:
+													<pre><code>'helper/ipv4-address-helper-custom.cc'</code></pre>
+												</li>
+												<li> Add the following line in <b>headers.source</b>:
+													<pre><code>'helper/ipv4-address-helper-custom.h'</code></pre>
+												</li>
+											</ul>
+										</li>
+										<li>Copy all the files from <b>Bitcoin-Simulation/src</b> to the respective folder under <b>ns-allinone-3.xx/ns-3.xx/src/</b>.</li>
+										<li>Configure ns3 with the follow command to ensure compatibility and maximum performance. 
+											<pre><code>CXXFLAGS="-std=c++11" ./waf configure --build-profile=optimized --out=build/optimized --with-pybindgen=/home/bill/Desktop/workspace/ns-allinone-3.24/pybindgen-0.17.0.post41+ngd10fa60 --enable-mpi --enable-static</code></pre></li>
+										<li>Rebuild ns3 using the <code>./waf</code> command.</li>
+									</ol>
+
+								</div>
+							</div>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Installation Tutorial</h2>
+							<p>Did you get confused? Don't worry; you can watch our installation tutorial for a more concrete demonstration. </p>
+							<ul class="copyright">
+								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
