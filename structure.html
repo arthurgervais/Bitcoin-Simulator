@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bitcoin Simulator - Project Structure</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Bitcoin Simulator</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="get_started.html">Get Started</a></li>
+								<li><a href="Installation.html">Installation</a></li>
+								<li><a href="use_it.html">Use it</a></li>
+								<li><a href="https://github.com/vthglyk/Bitcoin-Simulation">Github</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Project Structure</h2>
+								<p>Learn about the project structure and get ready to extend it.</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<h3 class="major" style="text-transform:none">THE /src FOLDER</h3>
+									<p  style="font-size: 1.2em">The <b>/src</b> folder contains all the necessary source files that built up the Bitcoin Simulator.
+									The tables below present all the files along with a high level description.</p>
+									
+									<h3 class="major" style="text-align: center; text-transform:none">/applications/model</h3>
+									<div class="table-wrapper" >
+										<table>
+										    <col width="220">
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th>File</th>
+													<th>Description</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>bitcoin.h/.c</td>
+													<td>Contains definitions of block, chunk and blockchain classes.</td>
+												</tr>
+												<tr>
+													<td>bitcoin-node.h/.c</td>
+													<td>It contains the <b>BitcoinNode</b> class, which implements a regular Bitcoin node. It describes how the regular nodes receive, process and respond to protocol messages,
+													and how they validate and advertise blocks to their peers. </td>
+												</tr>
+												<tr>
+													<td>bitcoin-miner.h/.c</td>
+													<td>It contains the <b>BitcoinMiner</b> class, which inherits from the <b>BitcoinNode</b> class, but it extends it by
+													adding mining functionality.</td>
+												</tr>
+												<tr>
+													<td>bitcoin-selfish-miner.h/.c</td>
+													<td>Implements the <b>BitcoinSelfishMiner</b> class, which follows the optimal adversarial strategy combining selfish mining and
+													double-spending attacks.</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<h3 class="major" style="text-align: center; text-transform:none">/applications/helper</h3>
+									<div class="table-wrapper" >
+										<table>
+										    <col width="220">
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th>File</th>
+													<th>Description</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>bitcoin-node-helper.h/.cc</td>
+													<td>It is common practice in <b>ns3</b> to have helper classes setting up class objects.
+													The <b>BitcoinNodeHelper</b> class defined in this file instantiates objects of <b>BitcoinNode</b> class and configures all the necessary information, such as peer addresses,
+													downloading/uploading speeds, information dissemination protocol etc...</td>
+												</tr>
+												<tr>
+													<td>bitcoin-miner-helper.h/.cc</td>
+													<td>It defines the <b>BitcoinMinerHelper</b> class, which extends the <b>BitcoinNodeHelper</b> class, and helps instantiating <b>BitcoinMiner</b>
+													objects. Except for the necessary information configured by its parent class, this class also sets up the type of the miner (regular miner or selfish miner) and the 
+													information propagation protocol it uses to inform other miners and regular nodes (e.g. standard, unsolicited, relay network)</td>
+												</tr>
+												<tr>
+													<td>bitcoin-topology-helper.h/.cc</td>
+													<td>It contains the <b>BitcoinTopology</b> class, which is responsible for constructing the Bitcoin topology by creating the nodes, setting up their location and configuring their 
+													interconnections, latencies and bandwidth speeds.</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<h3 class="major" style="text-align: center; text-transform:none">/internet/helper</h3>
+									<div class="table-wrapper" >
+										<table>
+										    <col width="220">
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th>File</th>
+													<th>Description</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>ipv4-address-helper-custom.h/.cc</td>
+													<td>It encloses the <b>Ipv4AddressHelperCustom</b> class, which is a simple modification of the integrated <b>Ipv4AddressHelper, used to
+													speed up the assignment of IPv4 addresses to the Bitcoin nodes.</b>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+								</div>
+							</div>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h3 class="major" style="text-transform:none">THE /scratch FOLDER</h3>
+							<p  style="font-size: 1.2em">The following table presents the files enclosed in the <b>/scratch</b> folder and they are they responsible 
+							for setting up and executing the simulations.</p>
+									
+							<h3 class="major" style="text-align: center; text-transform:none">/scratch</h3>
+							<div class="table-wrapper" >
+								<table>
+									<col width="220">
+									<thead style="font-size: 1.2em">
+										<tr>
+											<th>File</th>
+											<th>Description</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>bitcoin-test.cc</td>
+											<td>The actual simulation file which uses the above helpers to set up the simulation and collect statistics</b>
+											</td>
+										</tr>
+										<tr>
+											<td>selfish-miner-test.cc</td>
+											<td>The file simulating the optimal strategy for selfish mining and double-spending attack</b>
+											</td>
+										</tr>
+									</tbody>
+								</table>										
+							</div>
+							<ul class="copyright">
+								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

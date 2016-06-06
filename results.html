@@ -1,0 +1,5950 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bitcoin Simulator - Experimental Results</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Bitcoin Simulator</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="get_started.html">Get Started</a></li>
+								<li><a href="Installation.html">Installation</a></li>
+								<li><a href="use_it.html">Use it</a></li>
+								<li><a href="https://github.com/vthglyk/Bitcoin-Simulation">Github</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo"><span class="icon fa-diamond"></span></div>
+							<h2>Experimental Results</h2>
+							<p>Check our experimental results.</p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper" >
+						<div class="wrapper">
+							<div class="inner">
+								<p style="font-size: 1.2em"> Here you can browse through our experimental results. All the used semantics are introduced in the following table. The results are
+								also available in <a href="results.xlsx">excel</a> format.</p>
+								
+								<h3 class="major" style="text-align: center;">Semantics</h3>
+								<div class="table-wrapper" >
+									<table>
+									    <col width="50%">
+									    <col width="50%">
+										<thead style="font-size: 1.2em">
+											<tr>
+												<th>Abbreviation</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>t<sub>mean</sub></td>
+												<td>Mean Block Propagation Delay</td>
+											</tr>
+
+											<tr>
+												<td>t<sub>median</sub></td>
+												<td>Median Block Propagation Delay</td>
+											</tr>
+												<td>t<sub>10%</sub></td>
+												<td>10% Block Propagation Delay</td>
+											</tr>
+											
+											<tr>
+												<td>t<sub>25%</sub></td>
+												<td>25% Block Propagation Delay</td>
+											</tr>
+											
+											<tr>
+												<td>t<sub>75%</sub></td>
+												<td>75% Block Propagation Delay</td>
+											</tr>
+											
+											<tr>
+												<td>t<sub>90%</sub></td>
+												<td>90% Block Propagation Delay</td>
+											</tr>
+											
+											<tr>
+												<td>s<sub>r</sub></td>
+												<td>Stale Block Rate</td>
+											</tr>
+											
+											<tr>
+												<td>tps</td>
+												<td>Throughput in transactions/second</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<ul class="actions">
+								  <li><a class="tab button special" onclick="openTab(event, 'Interval')">Impact of Block Interval</a></li>
+								  <li><a class="tab button" onclick="openTab(event, 'Size')">Impact of Block Size</a></li>
+								  <li><a class="tab button" onclick="openTab(event, 'Connectivity')">Impact of Connectivity</a></li>
+								  <li><a class="tab button" onclick="openTab(event, 'Blocktorrent')">Blocktorrent</a></li>
+								  <li><a class="tab button" onclick="openTab(event, 'Blocktorrent-spv')">Blocktorrent-spv</a></li>
+								  <li><a class="tab button" onclick="openTab(event, 'Miners')">Impact of Number of miners</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- One -->
+							<section id="Interval" class="wrapper alt style2 tabcontent" style="display:block">
+								<div class="inner">
+									<h3 class="major">Impact of Block Generation Interval</h3>
+									
+									<h3 class="major" style="text-align: center;">Standard</h3>
+									<div class="table-wrapper" style="text-align: center;">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th>Interval</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>25 mins</td>
+													<td>61.23</td>
+													<td>35.73</td>
+													<td>18.43</td>
+													<td>24.15</td>
+													<td>52.59</td>
+													<td>91.02</td>
+													<td>1.72%</td>
+													<td>14.14</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>25.83</td>
+													<td>14.7</td>
+													<td>7.87</td>
+													<td>10.14</td>
+													<td>21.29</td>
+													<td>35.47</td>
+													<td>1.51%</td>
+													<td>14.26</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>6.83</td>
+													<td>4.18</td>
+													<td>2.52</td>
+													<td>3.06</td>
+													<td>5.76</td>
+													<td>9.12</td>
+													<td>1.82%</td>
+													<td>14.51</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>3.02</td>
+													<td>2.08</td>
+													<td>1.43</td>
+													<td>1.65</td>
+													<td>2.68</td>
+													<td>3.76</td>
+													<td>2.15%</td>
+													<td>14.71</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>1.81</td>
+													<td>1.43</td>
+													<td>1.07</td>
+													<td>1.2</td>
+													<td>1.77</td>
+													<td>2.3</td>
+													<td>2.54%</td>
+													<td>15.39</td>
+												</tr>
+												<tr>
+													<td>20s</td>
+													<td>1.45</td>
+													<td>1.21</td>
+													<td>0.95</td>
+													<td>1.05</td>
+													<td>1.45</td>
+													<td>1.83</td>
+													<td>3.20%</td>
+													<td>16.12</td>
+												</tr>
+												<tr>
+													<td>10s</td>
+													<td>1.09</td>
+													<td>1</td>
+													<td>0.8</td>
+													<td>0.88</td>
+													<td>1.13</td>
+													<td>1.38</td>
+													<td>4.77%</td>
+													<td>17.67</td>
+												</tr>
+												<tr>
+													<td>5s</td>
+													<td>0.93</td>
+													<td>0.89</td>
+													<td>0.73</td>
+													<td>0.79</td>
+													<td>0.97</td>
+													<td>1.13</td>
+													<td>8.64%</td>
+													<td>21.03</td>
+												</tr>
+												<tr>
+													<td>2s</td>
+													<td>0.85</td>
+													<td>0.84</td>
+													<td>0.68</td>
+													<td>0.74</td>
+													<td>0.91</td>
+													<td>1</td>
+													<td>16.65%</td>
+													<td>31.44</td>
+												</tr>
+												<tr>
+													<td>1s</td>
+													<td>0.84</td>
+													<td>0.82</td>
+													<td>0.67</td>
+													<td>0.71</td>
+													<td>0.89</td>
+													<td>0.97</td>
+													<td>26.74%</td>
+													<td>49.83</td>
+												</tr>
+												<tr>
+													<td>0.5s</td>
+													<td>0.83</td>
+													<td>0.82</td>
+													<td>0.66</td>
+													<td>0.7</td>
+													<td>0.88</td>
+													<td>0.96</td>
+													<td>38.15%</td>
+													<td>88.86</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<h3 class="major" style="text-align: center;">Unsolicited</h3>
+									<div class="table-wrapper" style="text-align: center;">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th>Interval</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>30.11</td>
+													<td>25.66</td>
+													<td>9.85</td>
+													<td>15.3</td>
+													<td>39.56</td>
+													<td>52.59</td>
+													<td>0.16%</td>
+													<td>15.76</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>12.12</td>
+													<td>10.65</td>
+													<td>4.28</td>
+													<td>6.6</td>
+													<td>15.52</td>
+													<td>20.26</td>
+													<td>0.13%</td>
+													<td>15.85</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>3.26</td>
+													<td>2.91</td>
+													<td>1.37</td>
+													<td>2</td>
+													<td>3.94</td>
+													<td>5.24</td>
+													<td>0.16%</td>
+													<td>16.16</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>1.48</td>
+													<td>1.34</td>
+													<td>0.72</td>
+													<td>0.98</td>
+													<td>1.75</td>
+													<td>2.31</td>
+													<td>0.35%</td>
+													<td>16.37</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>0.92</td>
+													<td>0.84</td>
+													<td>0.5</td>
+													<td>0.64</td>
+													<td>1.08</td>
+													<td>1.39</td>
+													<td>0.45%</td>
+													<td>16.99</td>
+												</tr>
+												<tr>
+													<td>20s</td>
+													<td>0.73</td>
+													<td>0.67</td>
+													<td>0.42</td>
+													<td>0.52</td>
+													<td>0.85</td>
+													<td>1.12</td>
+													<td>0.86%</td>
+													<td>17.37</td>
+												</tr>
+												<tr>
+													<td>10s</td>
+													<td>0.55</td>
+													<td>0.49</td>
+													<td>0.35</td>
+													<td>0.4</td>
+													<td>0.63</td>
+													<td>0.84</td>
+													<td>1.73%</td>
+													<td>18.96</td>
+												</tr>
+												<tr>
+													<td>5s</td>
+													<td>0.46</td>
+													<td>0.4</td>
+													<td>0.3</td>
+													<td>0.35</td>
+													<td>0.53</td>
+													<td>0.71</td>
+													<td>2.94%</td>
+													<td>22.5</td>
+												</tr>
+												<tr>
+													<td>2s</td>
+													<td>0.42</td>
+													<td>0.34</td>
+													<td>0.26</td>
+													<td>0.3</td>
+													<td>0.47</td>
+													<td>0.63</td>
+													<td>6.98%</td>
+													<td>34.11</td>
+												</tr>
+												<tr>
+													<td>1s</td>
+													<td>0.4</td>
+													<td>0.33</td>
+													<td>0.25</td>
+													<td>0.28</td>
+													<td>0.43</td>
+													<td>0.61</td>
+													<td>12.44%</td>
+													<td>56.55</td>
+												</tr>
+												<tr>
+													<td>0.5s</td>
+													<td>0.42</td>
+													<td>0.33</td>
+													<td>0.24</td>
+													<td>0.27</td>
+													<td>0.42</td>
+													<td>0.65</td>
+													<td>20.62%</td>
+													<td>106.3</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+									
+									<h3 class="major" style="text-align: center;">Relay Network</h3>
+									<div class="table-wrapper" style="text-align: center;">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th>Interval</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>25.45</td>
+													<td>22.5</td>
+													<td>8.28</td>
+													<td>13.94</td>
+													<td>31.53</td>
+													<td>42.99</td>
+													<td>0.03%</td>
+													<td>14.16</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>10.66</td>
+													<td>9.41</td>
+													<td>3.86</td>
+													<td>6.09</td>
+													<td>13.1</td>
+													<td>17.8</td>
+													<td>0.14%</td>
+													<td>14.13</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>2.9</td>
+													<td>2.6</td>
+													<td>1.18</td>
+													<td>1.75</td>
+													<td>3.51</td>
+													<td>4.71</td>
+													<td>0.16%</td>
+													<td>14.33</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>1.43</td>
+													<td>1.3</td>
+													<td>0.69</td>
+													<td>0.95</td>
+													<td>1.69</td>
+													<td>2.22</td>
+													<td>0.25%</td>
+													<td>14.87</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>0.91</td>
+													<td>0.84</td>
+													<td>0.49</td>
+													<td>0.64</td>
+													<td>1.08</td>
+													<td>1.38</td>
+													<td>0.51%</td>
+													<td>15.26</td>
+												</tr>
+												<tr>
+													<td>20s</td>
+													<td>0.75</td>
+													<td>0.69</td>
+													<td>0.43</td>
+													<td>0.53</td>
+													<td>0.88</td>
+													<td>1.14</td>
+													<td>0.85%</td>
+													<td>15.88</td>
+												</tr>
+												<tr>
+													<td>10s</td>
+													<td>0.58</td>
+													<td>0.53</td>
+													<td>0.36</td>
+													<td>0.41</td>
+													<td>0.68</td>
+													<td>0.89</td>
+													<td>1.41%</td>
+													<td>17.51</td>
+												</tr>
+												<tr>
+													<td>5s</td>
+													<td>0.51</td>
+													<td>0.45</td>
+													<td>0.32</td>
+													<td>0.36</td>
+													<td>0.59</td>
+													<td>0.8</td>
+													<td>2.99%</td>
+													<td>21.46</td>
+												</tr>
+												<tr>
+													<td>2s</td>
+													<td>0.49</td>
+													<td>0.39</td>
+													<td>0.28</td>
+													<td>0.34</td>
+													<td>0.55</td>
+													<td>0.74</td>
+													<td>7.28%</td>
+													<td>33.24</td>
+												</tr>
+												<tr>
+													<td>1s</td>
+													<td>0.53</td>
+													<td>0.38</td>
+													<td>0.27</td>
+													<td>0.33</td>
+													<td>0.54</td>
+													<td>0.73</td>
+													<td>12.59%</td>
+													<td>60.84</td>
+												</tr>
+												<tr>
+													<td>0.5s</td>
+													<td>0.57</td>
+													<td>0.38</td>
+													<td>0.26</td>
+													<td>0.33</td>
+													<td>0.56</td>
+													<td>0.84</td>
+													<td>20.87%</td>
+													<td>124.74</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+
+									<h3 class="major" style="text-align: center;">Sendheaders + Relay Network</h3>
+									<div class="table-wrapper" style="text-align: center;">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th>Interval</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>25.42</td>
+													<td>22.44</td>
+													<td>8.22</td>
+													<td>13.92</td>
+													<td>31.52</td>
+													<td>42.94</td>
+													<td>0.02%</td>
+													<td>14.1</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>10.39</td>
+													<td>9.18</td>
+													<td>3.52</td>
+													<td>5.83</td>
+													<td>12.87</td>
+													<td>17.47</td>
+													<td>0.13%</td>
+													<td>14.16</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>2.9</td>
+													<td>2.59</td>
+													<td>1.16</td>
+													<td>1.74</td>
+													<td>3.52</td>
+													<td>4.71</td>
+													<td>0.15%</td>
+													<td>14.38</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>1.4</td>
+													<td>1.27</td>
+													<td>0.67</td>
+													<td>0.93</td>
+													<td>1.66</td>
+													<td>2.18</td>
+													<td>0.29%</td>
+													<td>14.64</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>0.9</td>
+													<td>0.84</td>
+													<td>0.49</td>
+													<td>0.63</td>
+													<td>1.07</td>
+													<td>1.38</td>
+													<td>0.52%</td>
+													<td>15.3</td>
+												</tr>
+												<tr>
+													<td>20s</td>
+													<td>0.74</td>
+													<td>0.68</td>
+													<td>0.42</td>
+													<td>0.52</td>
+													<td>0.87</td>
+													<td>1.12</td>
+													<td>0.82%</td>
+													<td>15.79</td>
+												</tr>
+												<tr>
+													<td>10s</td>
+													<td>0.58</td>
+													<td>0.53</td>
+													<td>0.36</td>
+													<td>0.41</td>
+													<td>0.69</td>
+													<td>0.9</td>
+													<td>1.59%</td>
+													<td>17.85</td>
+												</tr>
+												<tr>
+													<td>5s</td>
+													<td>0.5</td>
+													<td>0.44</td>
+													<td>0.32</td>
+													<td>0.36</td>
+													<td>0.58</td>
+													<td>0.79</td>
+													<td>3.05%</td>
+													<td>21.6</td>
+												</tr>
+												<tr>
+													<td>2s</td>
+													<td>0.45</td>
+													<td>0.38</td>
+													<td>0.28</td>
+													<td>0.34</td>
+													<td>0.53</td>
+													<td>0.71</td>
+													<td>7.10%</td>
+													<td>33</td>
+												</tr>
+												<tr>
+													<td>1s</td>
+													<td>0.44</td>
+													<td>0.37</td>
+													<td>0.27</td>
+													<td>0.33</td>
+													<td>0.52</td>
+													<td>0.69</td>
+													<td>12.52%</td>
+													<td>52.97</td>
+												</tr>
+												<tr>
+													<td>0.5s</td>
+													<td>0.43</td>
+													<td>0.36</td>
+													<td>0.26</td>
+													<td>0.32</td>
+													<td>0.52</td>
+													<td>0.68</td>
+													<td>21.10%</td>
+													<td>94.53</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+
+									
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="Size" class="wrapper alt style2 tabcontent" style="display:none">
+								<div class="inner">
+									<h3 class="major">Impact of Block Size</h3>
+
+									<ul class="actions">
+									  <li><a class="sizeTab button special" onclick="openSizeTab(event, '0.1MB')">0.1 MB</a></li>
+									  <li><a class="sizeTab button" onclick="openSizeTab(event, '0.25MB')">0.25 MB</a></li>
+									  <li><a class="sizeTab button" onclick="openSizeTab(event, '0.5MB')">0.5 MB</a></li>
+									  <li><a class="sizeTab button" onclick="openSizeTab(event, '1MB')">1 MB</a></li>
+									  <li><a class="sizeTab button" onclick="openSizeTab(event, '2MB')">2 MB</a></li>
+									  <li><a class="sizeTab button" onclick="openSizeTab(event, '4MB')">4 MB</a></li>
+									  <li><a class="sizeTab button" onclick="openSizeTab(event, '8MB')">8 MB</a></li>
+									  <li><a class="sizeTab button" onclick="openSizeTab(event, '16MB')">16 MB</a></li>
+									</ul>
+									
+									<div id="0.1MB" class="sizeTabContent" style="display:block">
+										<h3 class="major" style="text-align: center;">Standard</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>25mins</td>
+														<td>4.472</td>
+														<td>3.154</td>
+														<td>1.966</td>
+														<td>2.362</td>
+														<td>4.281</td>
+														<td>6.128</td>
+														<td>0.10%</td>
+														<td>1.089</td>
+													</tr>
+													<tr>
+														<td>10mins</td>
+														<td>4.65</td>
+														<td>3.18</td>
+														<td>1.97</td>
+														<td>2.37</td>
+														<td>4.29</td>
+														<td>6.23</td>
+														<td>0.32%</td>
+														<td>2.72</td>
+													</tr>
+													<tr>
+														<td>2.5mins</td>
+														<td>5.468</td>
+														<td>3.206</td>
+														<td>2.009</td>
+														<td>2.402</td>
+														<td>4.32</td>
+														<td>6.424</td>
+														<td>1.13%</td>
+														<td>10.936</td>
+													</tr>
+													<tr>
+														<td>1mins</td>
+														<td>4.859</td>
+														<td>3.313</td>
+														<td>2.08</td>
+														<td>2.493</td>
+														<td>4.445</td>
+														<td>6.681</td>
+														<td>3.31%</td>
+														<td>27.368</td>
+													</tr>
+													<tr>
+														<td>30s</td>
+														<td>4.6</td>
+														<td>3.451</td>
+														<td>2.215</td>
+														<td>2.625</td>
+														<td>4.621</td>
+														<td>6.878</td>
+														<td>6.07%</td>
+														<td>54.699</td>
+													</tr>
+													<tr>
+														<td>20s</td>
+														<td>4.694</td>
+														<td>3.675</td>
+														<td>2.4</td>
+														<td>2.817</td>
+														<td>4.854</td>
+														<td>7.274</td>
+														<td>10.68%</td>
+														<td>82.564</td>
+													</tr>
+													<tr>
+														<td>10s</td>
+														<td>7.468</td>
+														<td>4.276</td>
+														<td>2.814</td>
+														<td>3.288</td>
+														<td>5.734</td>
+														<td>9.257</td>
+														<td>17.38%</td>
+														<td>323.263</td>
+													</tr>
+													<tr>
+														<td>5s</td>
+														<td>130.186</td>
+														<td>125.299</td>
+														<td>123.197</td>
+														<td>124.019</td>
+														<td>126.827</td>
+														<td>128.916</td>
+														<td>56.23%</td>
+														<td>1260.16</td>
+													</tr>
+													<tr>
+														<td>2s</td>
+														<td>419.453</td>
+														<td>414.864</td>
+														<td>412.575</td>
+														<td>413.571</td>
+														<td>416.955</td>
+														<td>465.22</td>
+														<td>75.59%</td>
+														<td>4811.63</td>
+													</tr>
+													<tr>
+														<td>1s</td>
+														<td>282.252</td>
+														<td>279.716</td>
+														<td>278.09</td>
+														<td>278.774</td>
+														<td>281.517</td>
+														<td>309.917</td>
+														<td>78.52%</td>
+														<td>8865.17</td>
+													</tr>
+													<tr>
+														<td>0.5s</td>
+														<td>179.898</td>
+														<td>179.243</td>
+														<td>177.606</td>
+														<td>178.392</td>
+														<td>180.583</td>
+														<td>193.064</td>
+														<td>79.90%</td>
+														<td>15163.6</td>
+													</tr>
+													
+												</tbody>
+											</table>
+										</div>
+
+										<h3 class="major" style="text-align: center;">Unsolicited</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>25mins</td>
+														<td>2.377</td>
+														<td>2.115</td>
+														<td>0.976</td>
+														<td>1.443</td>
+														<td>2.887</td>
+														<td>3.909</td>
+														<td>0.00%</td>
+														<td>1.21</td>
+													</tr>
+													<tr>
+														<td>10mins</td>
+														<td>2.38</td>
+														<td>2.12</td>
+														<td>0.98</td>
+														<td>1.44</td>
+														<td>2.89</td>
+														<td>3.91</td>
+														<td>0.03%</td>
+														<td>3.02</td>
+													</tr>
+													<tr>
+														<td>2mins</td>
+														<td>2.429</td>
+														<td>2.162</td>
+														<td>1.02</td>
+														<td>1.483</td>
+														<td>2.931</td>
+														<td>3.964</td>
+														<td>0.11%</td>
+														<td>12.098</td>
+													</tr>
+													<tr>
+														<td>1mins</td>
+														<td>2.562</td>
+														<td>2.281</td>
+														<td>1.135</td>
+														<td>1.601</td>
+														<td>3.052</td>
+														<td>4.088</td>
+														<td>0.96%</td>
+														<td>30.244</td>
+													</tr>
+													<tr>
+														<td>30s</td>
+														<td>2.709</td>
+														<td>2.394</td>
+														<td>1.249</td>
+														<td>1.709</td>
+														<td>3.188</td>
+														<td>4.229</td>
+														<td>1.29%</td>
+														<td>60.515</td>
+													</tr>
+													<tr>
+														<td>20s</td>
+														<td>2.902</td>
+														<td>2.572</td>
+														<td>1.437</td>
+														<td>1.891</td>
+														<td>3.38</td>
+														<td>4.42</td>
+														<td>1.74%</td>
+														<td>90.927</td>
+													</tr>
+													<tr>
+														<td>10s</td>
+														<td>7.718</td>
+														<td>3.859</td>
+														<td>2.58</td>
+														<td>3.093</td>
+														<td>4.817</td>
+														<td>6.212</td>
+														<td>8.48%</td>
+														<td>449.923</td>
+													</tr>
+													<tr>
+														<td>5s</td>
+														<td>283.355</td>
+														<td>276.241</td>
+														<td>268.355</td>
+														<td>271.489</td>
+														<td>282.019</td>
+														<td>289.79</td>
+														<td>57.96%</td>
+														<td>1645.54</td>
+													</tr>
+													<tr>
+														<td>2s</td>
+														<td>462.524</td>
+														<td>456.424</td>
+														<td>451.65</td>
+														<td>453.621</td>
+														<td>460.403</td>
+														<td>550.157</td>
+														<td>67.72%</td>
+														<td>5162.85</td>
+													</tr>
+													<tr>
+														<td>1s</td>
+														<td>308.36</td>
+														<td>306.398</td>
+														<td>304.069</td>
+														<td>305.112</td>
+														<td>308.182</td>
+														<td>343.555</td>
+														<td>73.37%</td>
+														<td>9377.52</td>
+													</tr>
+													<tr>
+														<td>0.5s</td>
+														<td>189.202</td>
+														<td>189.4</td>
+														<td>185.868</td>
+														<td>188.779</td>
+														<td>190.136</td>
+														<td>197.866</td>
+														<td>76.09%</td>
+														<td>16255.9</td>
+													</tr>
+													
+												</tbody>
+											</table>
+										</div>
+
+										<h3 class="major" style="text-align: center;">Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>25mins</td>
+														<td>2.24</td>
+														<td>2.02</td>
+														<td>0.94</td>
+														<td>1.38</td>
+														<td>2.71</td>
+														<td>3.61</td>
+														<td>0.00%</td>
+														<td>1.09</td>
+													</tr>
+													<tr>
+														<td>10mins</td>
+														<td>2.24</td>
+														<td>2.02</td>
+														<td>0.94</td>
+														<td>1.38</td>
+														<td>2.72</td>
+														<td>3.61</td>
+														<td>0.03%</td>
+														<td>2.72</td>
+													</tr>
+													<tr>
+														<td>2.5mins</td>
+														<td>2.26</td>
+														<td>2.04</td>
+														<td>0.96</td>
+														<td>1.4</td>
+														<td>2.73</td>
+														<td>3.64</td>
+														<td>0.21%</td>
+														<td>10.86</td>
+													</tr>
+													<tr>
+														<td>1mins</td>
+														<td>2.3</td>
+														<td>2.07</td>
+														<td>0.99</td>
+														<td>1.44</td>
+														<td>2.76</td>
+														<td>3.69</td>
+														<td>0.10%</td>
+														<td>27.16</td>
+													</tr>
+													<tr>
+														<td>30s</td>
+														<td>2.41</td>
+														<td>2.16</td>
+														<td>1.08</td>
+														<td>1.52</td>
+														<td>2.87</td>
+														<td>3.81</td>
+														<td>0.34%</td>
+														<td>54.32</td>
+													</tr>
+													<tr>
+														<td>20s</td>
+														<td>2.46</td>
+														<td>2.2</td>
+														<td>1.11</td>
+														<td>1.56</td>
+														<td>2.9</td>
+														<td>3.86</td>
+														<td>1.21%</td>
+														<td>81.61</td>
+													</tr>
+													<tr>
+														<td>10s</td>
+														<td>6.26</td>
+														<td>2.64</td>
+														<td>1.47</td>
+														<td>1.97</td>
+														<td>3.43</td>
+														<td>4.59</td>
+														<td>2.08%</td>
+														<td>415.96</td>
+													</tr>
+													<tr>
+														<td>5s</td>
+														<td>309.43</td>
+														<td>305.22</td>
+														<td>299.94</td>
+														<td>301.97</td>
+														<td>309.39</td>
+														<td>314.2</td>
+														<td>2.94%</td>
+														<td>2935.48</td>
+													</tr>
+													
+												</tbody>
+											</table>
+										</div>
+
+										<h3 class="major" style="text-align: center;">Sendheaders + Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>25mins</td>
+														<td>2.24</td>
+														<td>2.02</td>
+														<td>0.93</td>
+														<td>1.37</td>
+														<td>2.71</td>
+														<td>3.6</td>
+														<td>0.00%</td>
+														<td>1.09</td>
+													</tr>
+													<tr>
+														<td>10mins</td>
+														<td>2.24</td>
+														<td>2.02</td>
+														<td>0.93</td>
+														<td>1.38</td>
+														<td>2.72</td>
+														<td>3.59</td>
+														<td>0.02%</td>
+														<td>2.72</td>
+													</tr>
+													<tr>
+														<td>2.5mins</td>
+														<td>2.26</td>
+														<td>2.04</td>
+														<td>0.96</td>
+														<td>1.4</td>
+														<td>2.74</td>
+														<td>3.63</td>
+														<td>0.15%</td>
+														<td>10.88</td>
+													</tr>
+													<tr>
+														<td>1mins</td>
+														<td>2.31</td>
+														<td>2.08</td>
+														<td>0.99</td>
+														<td>1.43</td>
+														<td>2.78</td>
+														<td>3.69</td>
+														<td>0.31%</td>
+														<td>27.21</td>
+													</tr>
+													<tr>
+														<td>30s</td>
+														<td>2.4</td>
+														<td>2.15</td>
+														<td>1.05</td>
+														<td>1.5</td>
+														<td>2.87</td>
+														<td>3.79</td>
+														<td>0.69%</td>
+														<td>54.43</td>
+													</tr>
+													<tr>
+														<td>20s</td>
+														<td>2.51</td>
+														<td>2.23</td>
+														<td>1.14</td>
+														<td>1.58</td>
+														<td>2.95</td>
+														<td>3.91</td>
+														<td>1.13%</td>
+														<td>81.77</td>
+													</tr>
+													<tr>
+														<td>10s</td>
+														<td>5.52</td>
+														<td>2.66</td>
+														<td>1.49</td>
+														<td>1.99</td>
+														<td>3.47</td>
+														<td>4.63</td>
+														<td>1.80%</td>
+														<td>386.63</td>
+													</tr>
+													<tr>
+														<td>5s</td>
+														<td>28.98</td>
+														<td>26.62</td>
+														<td>21.63</td>
+														<td>24.07</td>
+														<td>29.21</td>
+														<td>32.54</td>
+														<td>3.16%</td>
+														<td>1105.59</td>
+													</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									</div>
+									
+									<div id="0.25MB" class="sizeTabContent" style="display:none">
+										<h3 class="major" style="text-align: center;">Standard</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>25mins</td>
+														<td>10.27</td>
+														<td>6.91</td>
+														<td>3.86</td>
+														<td>4.841</td>
+														<td>9.896</td>
+														<td>15.013</td>
+														<td>0.44%</td>
+														<td>2.689</td>
+													</tr>
+													<tr>
+														<td>10mins</td>
+														<td>11.51</td>
+														<td>7.03</td>
+														<td>3.96</td>
+														<td>4.94</td>
+														<td>10.02</td>
+														<td>15.69</td>
+														<td>0.88%</td>
+														<td>6.72</td>
+													</tr>
+													<tr>
+														<td>2mins</td>
+														<td>11.37</td>
+														<td>7.319</td>
+														<td>4.199</td>
+														<td>5.208</td>
+														<td>10.327</td>
+														<td>16.556</td>
+														<td>2.18%</td>
+														<td>27.015</td>
+													</tr>
+													<tr>
+														<td>1mins</td>
+														<td>11.359</td>
+														<td>7.887</td>
+														<td>4.643</td>
+														<td>5.694</td>
+														<td>11.021</td>
+														<td>17.804</td>
+														<td>6.60%</td>
+														<td>68.067</td>
+													</tr>
+													<tr>
+														<td>30s</td>
+														<td>18.863</td>
+														<td>9.738</td>
+														<td>6.138</td>
+														<td>7.292</td>
+														<td>13.428</td>
+														<td>24.041</td>
+														<td>16.68%</td>
+														<td>249.845</td>
+													</tr>
+													<tr>
+														<td>20s</td>
+														<td>32.675</td>
+														<td>20.602</td>
+														<td>15.292</td>
+														<td>17.052</td>
+														<td>24.985</td>
+														<td>34.279</td>
+														<td>29.84%</td>
+														<td>621.559</td>
+													</tr>
+													<tr>
+														<td>10s</td>
+														<td>621.82</td>
+														<td>610.34</td>
+														<td>602.7</td>
+														<td>605.74</td>
+														<td>615.279</td>
+														<td>622.15</td>
+														<td>69.23%</td>
+														<td>1844.49</td>
+													</tr>
+													<tr>
+														<td>5s</td>
+														<td>1010.89</td>
+														<td>999.669</td>
+														<td>994.026</td>
+														<td>996.432</td>
+														<td>1005.03</td>
+														<td>1092.5</td>
+														<td>78.63%</td>
+														<td>4815.6</td>
+													</tr>
+													<tr>
+														<td>2s</td>
+														<td>616.422</td>
+														<td>611.898</td>
+														<td>608.668</td>
+														<td>610.099</td>
+														<td>614.965</td>
+														<td>675.795</td>
+														<td>81.81%</td>
+														<td>9754.58</td>
+													</tr>
+													<tr>
+														<td>1s</td>
+														<td>387.56</td>
+														<td>388.49</td>
+														<td>374.776</td>
+														<td>386.804</td>
+														<td>390.351</td>
+														<td>399.951</td>
+														<td>79.77%</td>
+														<td>17905.5</td>
+													</tr>
+													<tr>
+														<td>0.5s</td>
+														<td>215.112</td>
+														<td>216.251</td>
+														<td>203.08</td>
+														<td>214.508</td>
+														<td>217.788</td>
+														<td>220.032</td>
+														<td>81.79%</td>
+														<td>31911.4</td>
+													</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Unsolicited</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>5.511</td>
+													<td>4.886</td>
+													<td>1.95</td>
+													<td>3.092</td>
+													<td>6.933</td>
+													<td>9.248</td>
+													<td>0.00%</td>
+													<td>2.995</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>5.59</td>
+													<td>4.97</td>
+													<td>2.03</td>
+													<td>3.16</td>
+													<td>6.99</td>
+													<td>9.31</td>
+													<td>0.10%</td>
+													<td>7.49</td>
+												</tr>
+												<tr>
+													<td>2mins</td>
+													<td>5.961</td>
+													<td>5.285</td>
+													<td>2.342</td>
+													<td>3.472</td>
+													<td>7.322</td>
+													<td>9.656</td>
+													<td>0.11%</td>
+													<td>29.948</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>6.626</td>
+													<td>5.87</td>
+													<td>2.91</td>
+													<td>4.063</td>
+													<td>7.914</td>
+													<td>10.316</td>
+													<td>1.43%</td>
+													<td>74.926</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>15.994</td>
+													<td>8.075</td>
+													<td>4.915</td>
+													<td>6.157</td>
+													<td>10.304</td>
+													<td>12.965</td>
+													<td>4.57%</td>
+													<td>297.79</td>
+												</tr>
+												<tr>
+													<td>20s</td>
+													<td>29.763</td>
+													<td>18.529</td>
+													<td>13.672</td>
+													<td>15.639</td>
+													<td>21.756</td>
+													<td>25.664</td>
+													<td>17.55%</td>
+													<td>672.882</td>
+												</tr>
+												<tr>
+													<td>10s</td>
+													<td>1070.62</td>
+													<td>1046.52</td>
+													<td>1026.04</td>
+													<td>1033.54</td>
+													<td>1061.53</td>
+													<td>1181.5</td>
+													<td>67.08%</td>
+													<td>2238.96</td>
+												</tr>
+												<tr>
+													<td>5s</td>
+													<td>1136.49</td>
+													<td>1118.75</td>
+													<td>1107.81</td>
+													<td>1112.33</td>
+													<td>1127.7</td>
+													<td>1408.95</td>
+													<td>71.34%</td>
+													<td>4898.23</td>
+												</tr>
+												<tr>
+													<td>2s</td>
+													<td>669.757</td>
+													<td>666.865</td>
+													<td>662.25</td>
+													<td>664.532</td>
+													<td>669.84</td>
+													<td>726.868</td>
+													<td>75.10%</td>
+													<td>11359.5</td>
+												</tr>
+												<tr>
+													<td>1s</td>
+													<td>402.55</td>
+													<td>403.987</td>
+													<td>385.335</td>
+													<td>402.21</td>
+													<td>406.18</td>
+													<td>415.11</td>
+													<td>76.84%</td>
+													<td>19163.3</td>
+												</tr>
+												<tr>
+													<td>0.5s</td>
+													<td>214.839</td>
+													<td>215.231</td>
+													<td>208.123</td>
+													<td>213.948</td>
+													<td>216.822</td>
+													<td>223.977</td>
+													<td>76.95%</td>
+													<td>37622.4</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>5.02</td>
+													<td>4.48</td>
+													<td>1.82</td>
+													<td>2.87</td>
+													<td>6.18</td>
+													<td>8.39</td>
+													<td>0.00%</td>
+													<td>2.68</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>5.04</td>
+													<td>4.49</td>
+													<td>1.85</td>
+													<td>2.89</td>
+													<td>6.2</td>
+													<td>8.42</td>
+													<td>0.05%</td>
+													<td>6.7</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>5.22</td>
+													<td>4.65</td>
+													<td>1.98</td>
+													<td>3.02</td>
+													<td>6.37</td>
+													<td>8.6</td>
+													<td>0.00%</td>
+													<td>26.82</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>5.5</td>
+													<td>4.86</td>
+													<td>2.2</td>
+													<td>3.25</td>
+													<td>6.61</td>
+													<td>8.89</td>
+													<td>0.11%</td>
+													<td>67.08</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>8.83</td>
+													<td>5.41</td>
+													<td>2.66</td>
+													<td>3.79</td>
+													<td>7.21</td>
+													<td>9.66</td>
+													<td>0.53%</td>
+													<td>205.53</td>
+												</tr>
+												<tr>
+													<td>20s</td>
+													<td>18.5</td>
+													<td>9.83</td>
+													<td>5.02</td>
+													<td>7</td>
+													<td>13.51</td>
+													<td>17.59</td>
+													<td>0.63%</td>
+													<td>611.37</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Sendheaders + Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>5</td>
+													<td>4.46</td>
+													<td>1.77</td>
+													<td>2.84</td>
+													<td>6.19</td>
+													<td>8.36</td>
+													<td>0.00%</td>
+													<td>2.68</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>5.02</td>
+													<td>4.46</td>
+													<td>1.81</td>
+													<td>2.86</td>
+													<td>6.19</td>
+													<td>8.39</td>
+													<td>0.07%</td>
+													<td>6.71</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>5.19</td>
+													<td>4.6</td>
+													<td>1.95</td>
+													<td>3.01</td>
+													<td>6.35</td>
+													<td>8.57</td>
+													<td>0.10%</td>
+													<td>26.84</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>5.53</td>
+													<td>4.88</td>
+													<td>2.2</td>
+													<td>3.28</td>
+													<td>6.66</td>
+													<td>8.92</td>
+													<td>0.33%</td>
+													<td>67.14</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>8.25</td>
+													<td>5.38</td>
+													<td>2.64</td>
+													<td>3.77</td>
+													<td>7.19</td>
+													<td>9.63</td>
+													<td>0.66%</td>
+													<td>189.02</td>
+												</tr>
+												<tr>
+													<td>20s</td>
+													<td>18.57</td>
+													<td>8.84</td>
+													<td>4.75</td>
+													<td>6.58</td>
+													<td>12.07</td>
+													<td>16.41</td>
+													<td>1.06%</td>
+													<td>683.15</td>
+												</tr>
+												<tr>
+													<td>15s</td>
+													<td>47.66</td>
+													<td>41.47</td>
+													<td>31.16</td>
+													<td>35.96</td>
+													<td>48.14</td>
+													<td>55.09</td>
+													<td>2.57%</td>
+													<td>826.07</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+									<div id="0.5MB" class="sizeTabContent" style="display:none">
+										<h3 class="major" style="text-align: center;">Standard</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>20.662</td>
+													<td>13.451</td>
+													<td>7.249</td>
+													<td>9.27</td>
+													<td>19.376</td>
+													<td>31.494</td>
+													<td>0.43%</td>
+													<td>5.355</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>23.99</td>
+													<td>13.62</td>
+													<td>7.31</td>
+													<td>9.35</td>
+													<td>19.84</td>
+													<td>32.84</td>
+													<td>1.63%</td>
+													<td>13.45</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>21.802</td>
+													<td>14.668</td>
+													<td>8.148</td>
+													<td>10.272</td>
+													<td>21.055</td>
+													<td>35.446</td>
+													<td>6.06%</td>
+													<td>54.036</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>47.62</td>
+													<td>19.41</td>
+													<td>11.866</td>
+													<td>14.394</td>
+													<td>27.381</td>
+													<td>50.858</td>
+													<td>15.19%</td>
+													<td>334.838</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>352.875</td>
+													<td>329.831</td>
+													<td>314.576</td>
+													<td>320.554</td>
+													<td>338.265</td>
+													<td>349.638</td>
+													<td>49.00%</td>
+													<td>972.111</td>
+												</tr>
+												<tr>
+													<td>20s</td>
+													<td>1382.38</td>
+													<td>1356.19</td>
+													<td>1342.63</td>
+													<td>1348.22</td>
+													<td>1366.13</td>
+													<td>1381</td>
+													<td>70.34%</td>
+													<td>1910.55</td>
+												</tr>
+												<tr>
+													<td>10s</td>
+													<td>1961.18</td>
+													<td>1937.96</td>
+													<td>1926.22</td>
+													<td>1931.06</td>
+													<td>1948.95</td>
+													<td>2161.1</td>
+													<td>77.35%</td>
+													<td>4668.81</td>
+												</tr>
+												<tr>
+													<td>5s</td>
+													<td>1448.14</td>
+													<td>1441</td>
+													<td>1432.05</td>
+													<td>1436.25</td>
+													<td>1448.68</td>
+													<td>1544.87</td>
+													<td>77.37%</td>
+													<td>8720.67</td>
+												</tr>
+												<tr>
+													<td>2s</td>
+													<td>715.577</td>
+													<td>713.285</td>
+													<td>705.915</td>
+													<td>710.25</td>
+													<td>717.049</td>
+													<td>764.056</td>
+													<td>81.36%</td>
+													<td>18050.3</td>
+												</tr>
+												<tr>
+													<td>1s</td>
+													<td>409.216</td>
+													<td>407.461</td>
+													<td>402.822</td>
+													<td>405.17</td>
+													<td>412.273</td>
+													<td>441.262</td>
+													<td>82.79%</td>
+													<td>32049.1</td>
+												</tr>
+												<tr>
+													<td>0.5s</td>
+													<td>243.495</td>
+													<td>246.092</td>
+													<td>217.48</td>
+													<td>236.321</td>
+													<td>248.597</td>
+													<td>250.468</td>
+													<td>82.09%</td>
+													<td>58581.8</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Unsolicited</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>10.816</td>
+													<td>9.607</td>
+													<td>3.587</td>
+													<td>5.8</td>
+													<td>13.845</td>
+													<td>18.395</td>
+													<td>0.00%</td>
+													<td>5.969</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>11.07</td>
+													<td>9.84</td>
+													<td>3.79</td>
+													<td>6</td>
+													<td>14.12</td>
+													<td>18.63</td>
+													<td>0.13%</td>
+													<td>14.92</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>12.816</td>
+													<td>11.288</td>
+													<td>5.213</td>
+													<td>7.404</td>
+													<td>15.72</td>
+													<td>20.237</td>
+													<td>0.74%</td>
+													<td>59.74</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>30.976</td>
+													<td>17.379</td>
+													<td>10.544</td>
+													<td>13.119</td>
+													<td>22.128</td>
+													<td>27.003</td>
+													<td>6.20%</td>
+													<td>270.327</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>434.68</td>
+													<td>410.891</td>
+													<td>383.258</td>
+													<td>393.809</td>
+													<td>424.336</td>
+													<td>441.353</td>
+													<td>51.23%</td>
+													<td>1042.1</td>
+												</tr>
+												<tr>
+													<td>20s</td>
+													<td>2715.76</td>
+													<td>2641.75</td>
+													<td>2602.16</td>
+													<td>2616.44</td>
+													<td>2677.14</td>
+													<td>3499.45</td>
+													<td>69.48%</td>
+													<td>2530.58</td>
+												</tr>
+												<tr>
+													<td>10s</td>
+													<td>2516.54</td>
+													<td>2499.62</td>
+													<td>2478.9</td>
+													<td>2487.34</td>
+													<td>2513.28</td>
+													<td>2751.1</td>
+													<td>68.13%</td>
+													<td>4953.24</td>
+												</tr>
+												<tr>
+													<td>5s</td>
+													<td>1575.5</td>
+													<td>1567.87</td>
+													<td>1555.88</td>
+													<td>1561.96</td>
+													<td>1575.32</td>
+													<td>1721.59</td>
+													<td>73.32%</td>
+													<td>9226.71</td>
+												</tr>
+												<tr>
+													<td>2s</td>
+													<td>690.342</td>
+													<td>674.775</td>
+													<td>668.1</td>
+													<td>671.136</td>
+													<td>710.206</td>
+													<td>820.931</td>
+													<td>76.39%</td>
+													<td>20821.1</td>
+												</tr>
+												<tr>
+													<td>1s</td>
+													<td>445.482</td>
+													<td>448.535</td>
+													<td>420.446</td>
+													<td>445.188</td>
+													<td>450.771</td>
+													<td>454.455</td>
+													<td>78.57%</td>
+													<td>34928</td>
+												</tr>
+												<tr>
+													<td>0.5s</td>
+													<td>219.766</td>
+													<td>219.512</td>
+													<td>214.495</td>
+													<td>216.962</td>
+													<td>224.13</td>
+													<td>234.921</td>
+													<td>79.40%</td>
+													<td>71179.8</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>9.67</td>
+													<td>8.58</td>
+													<td>3.25</td>
+													<td>5.38</td>
+													<td>11.97</td>
+													<td>16.35</td>
+													<td>0.11%</td>
+													<td>5.34</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>9.75</td>
+													<td>8.65</td>
+													<td>3.34</td>
+													<td>5.44</td>
+													<td>12.05</td>
+													<td>16.42</td>
+													<td>0.05%</td>
+													<td>13.35</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>10.29</td>
+													<td>9.06</td>
+													<td>3.74</td>
+													<td>5.86</td>
+													<td>12.5</td>
+													<td>16.94</td>
+													<td>0.11%</td>
+													<td>53.43</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>25.43</td>
+													<td>11.07</td>
+													<td>5.42</td>
+													<td>7.81</td>
+													<td>14.85</td>
+													<td>19.8</td>
+													<td>0.32%</td>
+													<td>294.73</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Sendheaders + Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>9.59</td>
+													<td>8.51</td>
+													<td>3.13</td>
+													<td>5.31</td>
+													<td>11.92</td>
+													<td>16.22</td>
+													<td>0.00%</td>
+													<td>5.34</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>9.76</td>
+													<td>8.64</td>
+													<td>3.29</td>
+													<td>5.43</td>
+													<td>12.1</td>
+													<td>16.44</td>
+													<td>0.06%</td>
+													<td>13.36</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>10.47</td>
+													<td>9.21</td>
+													<td>3.83</td>
+													<td>5.98</td>
+													<td>12.69</td>
+													<td>17.16</td>
+													<td>0.25%</td>
+													<td>53.45</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>19.19</td>
+													<td>10.53</td>
+													<td>4.93</td>
+													<td>7.25</td>
+													<td>14.23</td>
+													<td>18.98</td>
+													<td>0.74%</td>
+													<td>213.56</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>119.31</td>
+													<td>101.97</td>
+													<td>79.9</td>
+													<td>89.84</td>
+													<td>117.74</td>
+													<td>134.17</td>
+													<td>1.06%</td>
+													<td>985.77</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>	
+
+									<div id="1MB" class="sizeTabContent" style="display:none">
+										<h3 class="major" style="text-align: center;">Standard</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>45.85</td>
+													<td>26.755</td>
+													<td>13.676</td>
+													<td>17.96</td>
+													<td>39.461</td>
+													<td>66.939</td>
+													<td>1.01%</td>
+													<td>10.706</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>45.98</td>
+													<td>27.67</td>
+													<td>14.52</td>
+													<td>18.83</td>
+													<td>40.35</td>
+													<td>68.64</td>
+													<td>3.17%</td>
+													<td>26.89</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>46.855</td>
+													<td>32.463</td>
+													<td>18.683</td>
+													<td>23.223</td>
+													<td>46.208</td>
+													<td>79.248</td>
+													<td>12.14%</td>
+													<td>113.559</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>586.235</td>
+													<td>544.198</td>
+													<td>515.928</td>
+													<td>525.832</td>
+													<td>564.652</td>
+													<td>590.614</td>
+													<td>48.66%</td>
+													<td>857.187</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>3265.1</td>
+													<td>3227.55</td>
+													<td>3201.34</td>
+													<td>3212.36</td>
+													<td>3249.12</td>
+													<td>3299.02</td>
+													<td>73.49%</td>
+													<td>2775.24</td>
+												</tr>
+												<tr>
+													<td>20s</td>
+													<td>4077.91</td>
+													<td>4038.26</td>
+													<td>4013.87</td>
+													<td>4024.54</td>
+													<td>4058.68</td>
+													<td>4397.19</td>
+													<td>78.33%</td>
+													<td>4535.04</td>
+												</tr>
+												<tr>
+													<td>10s</td>
+													<td>2995.91</td>
+													<td>2980.04</td>
+													<td>2961.34</td>
+													<td>2969.35</td>
+													<td>2998.42</td>
+													<td>3224.1</td>
+													<td>81.74%</td>
+													<td>8243.01</td>
+												</tr>
+												<tr>
+													<td>5s</td>
+													<td>1786.77</td>
+													<td>1779.78</td>
+													<td>1766.52</td>
+													<td>1773.13</td>
+													<td>1788.77</td>
+													<td>1910.18</td>
+													<td>82.97%</td>
+													<td>14349.3</td>
+												</tr>
+												<tr>
+													<td>2s</td>
+													<td>821.938</td>
+													<td>821.468</td>
+													<td>809.07</td>
+													<td>816.84</td>
+													<td>828.616</td>
+													<td>859.875</td>
+													<td>81.05%</td>
+													<td>32426.4</td>
+												</tr>
+												<tr>
+													<td>1s</td>
+													<td>454.505</td>
+													<td>455.853</td>
+													<td>418.972</td>
+													<td>450.874</td>
+													<td>461.985</td>
+													<td>471.146</td>
+													<td>83.94%</td>
+													<td>59001.6</td>
+												</tr>
+												<tr>
+													<td>0.5s</td>
+													<td>229.538</td>
+													<td>233.012</td>
+													<td>197.075</td>
+													<td>227.265</td>
+													<td>236.908</td>
+													<td>240.454</td>
+													<td>76.07%</td>
+													<td>122655</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Unsolicited</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>22.215</td>
+													<td>19.125</td>
+													<td>7.127</td>
+													<td>11.361</td>
+													<td>29.35</td>
+													<td>38.595</td>
+													<td>0.00%</td>
+													<td>11.918</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>23.5</td>
+													<td>20.1</td>
+													<td>8.14</td>
+													<td>12.37</td>
+													<td>30.38</td>
+													<td>39.65</td>
+													<td>0.38%</td>
+													<td>29.8</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>43.062</td>
+													<td>28.708</td>
+													<td>15.711</td>
+													<td>20.316</td>
+													<td>39.693</td>
+													<td>49.654</td>
+													<td>4.45%</td>
+													<td>157.355</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>1439.7</td>
+													<td>1400.54</td>
+													<td>1334.31</td>
+													<td>1360.33</td>
+													<td>1433.68</td>
+													<td>1469.72</td>
+													<td>55.13%</td>
+													<td>1055.97</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>4948.21</td>
+													<td>4880.45</td>
+													<td>4832.16</td>
+													<td>4849.1</td>
+													<td>4926.48</td>
+													<td>5520.18</td>
+													<td>68.33%</td>
+													<td>2956.82</td>
+												</tr>
+												<tr>
+													<td>20s</td>
+													<td>4622.76</td>
+													<td>4566.58</td>
+													<td>4530</td>
+													<td>4544.1</td>
+													<td>4596.75</td>
+													<td>5407.5</td>
+													<td>70.84%</td>
+													<td>4893.68</td>
+												</tr>
+												<tr>
+													<td>10s</td>
+													<td>3275.43</td>
+													<td>3258.9</td>
+													<td>3240.72</td>
+													<td>3249.5</td>
+													<td>3272.63</td>
+													<td>3601.35</td>
+													<td>71.12%</td>
+													<td>9233.3</td>
+												</tr>
+												<tr>
+													<td>5s</td>
+													<td>1751.36</td>
+													<td>1736.74</td>
+													<td>1723.74</td>
+													<td>1730.32</td>
+													<td>1747.79</td>
+													<td>1974.02</td>
+													<td>73.89%</td>
+													<td>16761.4</td>
+												</tr>
+												<tr>
+													<td>2s</td>
+													<td>789.798</td>
+													<td>781.633</td>
+													<td>767.385</td>
+													<td>774.901</td>
+													<td>806.329</td>
+													<td>878.049</td>
+													<td>74.08%</td>
+													<td>40964.1</td>
+												</tr>
+												<tr>
+													<td>1s</td>
+													<td>444.03</td>
+													<td>444.062</td>
+													<td>432.221</td>
+													<td>438.279</td>
+													<td>452.815</td>
+													<td>471.757</td>
+													<td>79.63%</td>
+													<td>71840.1</td>
+												</tr>
+												<tr>
+													<td>0.5s</td>
+													<td>234.394</td>
+													<td>234.858</td>
+													<td>224.998</td>
+													<td>230.578</td>
+													<td>240.909</td>
+													<td>253.841</td>
+													<td>78.28%</td>
+													<td>145418</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>18.9</td>
+													<td>16.73</td>
+													<td>6.08</td>
+													<td>10.29</td>
+													<td>23.49</td>
+													<td>32.14</td>
+													<td>0.00%</td>
+													<td>10.66</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>19.54</td>
+													<td>17.24</td>
+													<td>6.63</td>
+													<td>10.85</td>
+													<td>24.06</td>
+													<td>32.82</td>
+													<td>0.07%</td>
+													<td>26.65</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>27.73</td>
+													<td>19.56</td>
+													<td>8.72</td>
+													<td>13.12</td>
+													<td>26.67</td>
+													<td>35.81</td>
+													<td>0.40%</td>
+													<td>122.98</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>84.23</td>
+													<td>62.38</td>
+													<td>28.32</td>
+													<td>45.09</td>
+													<td>79.84</td>
+													<td>98.53</td>
+													<td>0.26%</td>
+													<td>681.89</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Sendheaders + Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>19.1</td>
+													<td>16.88</td>
+													<td>6.17</td>
+													<td>10.49</td>
+													<td>23.69</td>
+													<td>32.33</td>
+													<td>0.00%</td>
+													<td>10.66</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>19.51</td>
+													<td>17.18</td>
+													<td>6.49</td>
+													<td>10.76</td>
+													<td>24.09</td>
+													<td>32.77</td>
+													<td>0.07%</td>
+													<td>26.66</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>29.5</td>
+													<td>20.08</td>
+													<td>9.17</td>
+													<td>13.6</td>
+													<td>27.15</td>
+													<td>36.25</td>
+													<td>0.29%</td>
+													<td>129.07</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>68.4</td>
+													<td>38.07</td>
+													<td>20.42</td>
+													<td>27.98</td>
+													<td>49.69</td>
+													<td>61.96</td>
+													<td>0.73%</td>
+													<td>732.73</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+									<div id="2MB" class="sizeTabContent" style="display:none">
+										<h3 class="major" style="text-align: center;">Standard</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>90.27</td>
+													<td>54.7</td>
+													<td>28.03</td>
+													<td>36.77</td>
+													<td>80.65</td>
+													<td>139.58</td>
+													<td>3.25%</td>
+													<td>21.45</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>88.35</td>
+													<td>57.79</td>
+													<td>30.8</td>
+													<td>39.58</td>
+													<td>84.06</td>
+													<td>145.35</td>
+													<td>6.24%</td>
+													<td>53.92</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>221.22</td>
+													<td>123.37</td>
+													<td>85.02</td>
+													<td>98.46</td>
+													<td>157.89</td>
+													<td>230.14</td>
+													<td>26.46%</td>
+													<td>666.39</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>7028.52</td>
+													<td>6941.48</td>
+													<td>6878.62</td>
+													<td>6905.89</td>
+													<td>6985.27</td>
+													<td>7058.85</td>
+													<td>72.99%</td>
+													<td>2820.09</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>7304.6</td>
+													<td>7254.71</td>
+													<td>7212.15</td>
+													<td>7231.16</td>
+													<td>7288.31</td>
+													<td>7826.17</td>
+													<td>77.45%</td>
+													<td>5893.53</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Unsolicited</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>46.24</td>
+													<td>39.09</td>
+													<td>15.2</td>
+													<td>23.39</td>
+													<td>60.77</td>
+													<td>81.83</td>
+													<td>0.31%</td>
+													<td>23.82</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>52.87</td>
+													<td>44.6</td>
+													<td>20.31</td>
+													<td>28.76</td>
+													<td>66.62</td>
+													<td>87.86</td>
+													<td>1.12%</td>
+													<td>59.61</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>1248.9</td>
+													<td>1131.4</td>
+													<td>1059.45</td>
+													<td>1078.23</td>
+													<td>1234.55</td>
+													<td>1281.83</td>
+													<td>44.62%</td>
+													<td>699.6</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>9701.22</td>
+													<td>9497.75</td>
+													<td>9399.03</td>
+													<td>9435.95</td>
+													<td>9607.88</td>
+													<td>11779.4</td>
+													<td>71.55%</td>
+													<td>3200.02</td>
+												</tr>
+												<tr>
+													<td>30s</td>
+													<td>8755.57</td>
+													<td>8706.79</td>
+													<td>8650.99</td>
+													<td>8676.87</td>
+													<td>8755.13</td>
+													<td>9703.03</td>
+													<td>71.94%</td>
+													<td>6067.49</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>38.35</td>
+													<td>33.82</td>
+													<td>12.42</td>
+													<td>20.94</td>
+													<td>47.47</td>
+													<td>64.76</td>
+													<td>0.00%</td>
+													<td>21.3</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>40.49</td>
+													<td>35.49</td>
+													<td>14.17</td>
+													<td>22.73</td>
+													<td>49.27</td>
+													<td>66.76</td>
+													<td>0.08%</td>
+													<td>53.26</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>272.4</td>
+													<td>190.42</td>
+													<td>131.48</td>
+													<td>159.64</td>
+													<td>229.39</td>
+													<td>275.63</td>
+													<td>0.33%</td>
+													<td>804.09</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Sendheaders + Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>38.51</td>
+													<td>33.99</td>
+													<td>12.59</td>
+													<td>21.16</td>
+													<td>47.65</td>
+													<td>64.95</td>
+													<td>0.10%</td>
+													<td>21.3</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>40.5</td>
+													<td>35.38</td>
+													<td>13.95</td>
+													<td>22.62</td>
+													<td>49.34</td>
+													<td>66.95</td>
+													<td>0.10%</td>
+													<td>53.27</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>512.88</td>
+													<td>416.33</td>
+													<td>328.76</td>
+													<td>369.4</td>
+													<td>474.42</td>
+													<td>552.58</td>
+													<td>0.82%</td>
+													<td>922.18</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>	
+
+									<div id="4MB" class="sizeTabContent" style="display:none">
+										<h3 class="major" style="text-align: center;">Standard</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>175.05</td>
+													<td>113.23</td>
+													<td>58.96</td>
+													<td>76.32</td>
+													<td>165.29</td>
+													<td>284.94</td>
+													<td>4.82%</td>
+													<td>43.03</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>237.55</td>
+													<td>133.3</td>
+													<td>76.18</td>
+													<td>95.22</td>
+													<td>190.62</td>
+													<td>352.43</td>
+													<td>11.85%</td>
+													<td>148.19</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>13124.2</td>
+													<td>12910.7</td>
+													<td>12781.3</td>
+													<td>12835.4</td>
+													<td>12991.9</td>
+													<td>13128.8</td>
+													<td>73.54%</td>
+													<td>2141.04</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>14738.6</td>
+													<td>14615.3</td>
+													<td>14538.8</td>
+													<td>14572.9</td>
+													<td>14679.7</td>
+													<td>16039.4</td>
+													<td>75.32%</td>
+													<td>6208.44</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Unsolicited</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>99.9</td>
+													<td>82.78</td>
+													<td>35.11</td>
+													<td>51.48</td>
+													<td>128</td>
+													<td>171.46</td>
+													<td>0.62%</td>
+													<td>47.65</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>220.42</td>
+													<td>126.57</td>
+													<td>72.99</td>
+													<td>91.12</td>
+													<td>175.42</td>
+													<td>223.54</td>
+													<td>5.46%</td>
+													<td>183.01</td>
+												</tr>
+												<tr>
+													<td>2.5mins</td>
+													<td>18931.9</td>
+													<td>18641.7</td>
+													<td>18341</td>
+													<td>18447.7</td>
+													<td>18875.8</td>
+													<td>19446.4</td>
+													<td>68.26%</td>
+													<td>2393.06</td>
+												</tr>
+												<tr>
+													<td>1mins</td>
+													<td>18028.1</td>
+													<td>17949.5</td>
+													<td>17824.9</td>
+													<td>17882.4</td>
+													<td>18030.4</td>
+													<td>19237.7</td>
+													<td>73.00%</td>
+													<td>6535.51</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>78.32</td>
+													<td>68.78</td>
+													<td>26.3</td>
+													<td>43.26</td>
+													<td>96.16</td>
+													<td>130.79</td>
+													<td>0.00%</td>
+													<td>42.58</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>93.3</td>
+													<td>78.01</td>
+													<td>34.65</td>
+													<td>52.49</td>
+													<td>106.31</td>
+													<td>142.13</td>
+													<td>0.12%</td>
+													<td>108.77</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Sendheaders + Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>79.52</td>
+													<td>69.6</td>
+													<td>26.93</td>
+													<td>44.12</td>
+													<td>97.28</td>
+													<td>132.49</td>
+													<td>0.00%</td>
+													<td>42.58</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>103.87</td>
+													<td>78.4</td>
+													<td>34.42</td>
+													<td>52.35</td>
+													<td>106.88</td>
+													<td>143.39</td>
+													<td>0.13%</td>
+													<td>122.26</td>
+												</tr>
+												<tr>
+													<td>5mins</td>
+													<td>266.3</td>
+													<td>136.43</td>
+													<td>66.98</td>
+													<td>97.38</td>
+													<td>183.36</td>
+													<td>234.81</td>
+													<td>0.29%</td>
+													<td>655.93</td>
+												</tr>
+												<tr>
+													<td>3mins</td>
+													<td>4472.88</td>
+													<td>4380.47</td>
+													<td>3815.17</td>
+													<td>4198.47</td>
+													<td>4551.95</td>
+													<td>4732.66</td>
+													<td>0.44%</td>
+													<td>1970.55</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+									<div id="8MB" class="sizeTabContent" style="display:none">
+										<h3 class="major" style="text-align: center;">Standard</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>356.21</td>
+													<td>248.78</td>
+													<td>137.05</td>
+													<td>174.38</td>
+													<td>360.01</td>
+													<td>629.31</td>
+													<td>11.61%</td>
+													<td>87</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>902.32</td>
+													<td>571.5</td>
+													<td>412.71</td>
+													<td>470.59</td>
+													<td>704.64</td>
+													<td>961.3</td>
+													<td>29.97%</td>
+													<td>604.28</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Unsolicited</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>243.36</td>
+													<td>197.76</td>
+													<td>99.51</td>
+													<td>132.66</td>
+													<td>291.16</td>
+													<td>380.49</td>
+													<td>2.19%</td>
+													<td>98.49</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>875.97</td>
+													<td>560.79</td>
+													<td>401.12</td>
+													<td>444.89</td>
+													<td>670.48</td>
+													<td>940.6</td>
+													<td>15.64%</td>
+													<td>614.35</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>170.38</td>
+													<td>148.98</td>
+													<td>62.7</td>
+													<td>98.28</td>
+													<td>204.67</td>
+													<td>276.24</td>
+													<td>0.21%</td>
+													<td>85.21</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>923.78</td>
+													<td>555.49</td>
+													<td>289.54</td>
+													<td>440.68</td>
+													<td>785.9</td>
+													<td>1080.63</td>
+													<td>0.43%</td>
+													<td>797.57</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Sendheaders + Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>167.46</td>
+													<td>145.99</td>
+													<td>59.84</td>
+													<td>95.01</td>
+													<td>202.2</td>
+													<td>274.36</td>
+													<td>0.33%</td>
+													<td>85.21</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>920.43</td>
+													<td>550.25</td>
+													<td>285.11</td>
+													<td>432.49</td>
+													<td>774.54</td>
+													<td>1000.33</td>
+													<td>0.40%</td>
+													<td>797.06</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+									<div id="16MB" class="sizeTabContent" style="display:none">
+										<h3 class="major" style="text-align: center;">Standard</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>1378.38</td>
+													<td>673.13</td>
+													<td>416.1</td>
+													<td>506.73</td>
+													<td>931.54</td>
+													<td>1629.48</td>
+													<td>19.14%</td>
+													<td>441.39</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>50478</td>
+													<td>49763.7</td>
+													<td>49241.1</td>
+													<td>49449.4</td>
+													<td>50067.4</td>
+													<td>50502.9</td>
+													<td>72.47%</td>
+													<td>2012.11</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Unsolicited</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>1566.92</td>
+													<td>973.8</td>
+													<td>653.39</td>
+													<td>743.82</td>
+													<td>1266.34</td>
+													<td>1513.91</td>
+													<td>15.70%</td>
+													<td>471.73</td>
+												</tr>
+												<tr>
+													<td>10mins</td>
+													<td>80711.6</td>
+													<td>78613.8</td>
+													<td>77501.1</td>
+													<td>77889.6</td>
+													<td>79582.6</td>
+													<td>102212</td>
+													<td>69.28%</td>
+													<td>2506.8</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>25mins</td>
+													<td>866.03</td>
+													<td>382.15</td>
+													<td>192.52</td>
+													<td>276.47</td>
+													<td>513.57</td>
+													<td>683.9</td>
+													<td>0.21%</td>
+													<td>435.67</td>
+												</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									
+										<h3 class="major" style="text-align: center;">Sendheaders + Relay Network</h3>
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th>Interval</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+													<td>25mins</td>
+													<td>900.18</td>
+													<td>385.6</td>
+													<td>192.11</td>
+													<td>277.03</td>
+													<td>516.85</td>
+													<td>691.1</td>
+													<td>0.32%</td>
+													<td>444.65</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>									
+							</section>
+
+						<!-- Three -->
+							<section id="Connectivity" class="wrapper alt style2 tabcontent" style="display:none">
+								<div class="inner">
+									<h3 class="major">Impact of Connectivity</h3>
+
+									<ul class="actions">
+									  <li><a class="connectivityTab button special" onclick="openConnectivityTab(event, '10mins')">10 mins</a></li>
+									  <li><a class="connectivityTab button" onclick="openConnectivityTab(event, '2.5mins')">2.5 mins</a></li>
+									  <li><a class="connectivityTab button" onclick="openConnectivityTab(event, '1min')">1 min</a></li>
+									</ul>
+									
+									<div id="10mins" class="connectivityTabContent" style="display:block">
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th># Connections</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>5</td>
+														<td>10.695</td>
+														<td>9.54</td>
+														<td>3.899</td>
+														<td>6.222</td>
+														<td>13.153</td>
+														<td>17.942</td>
+														<td>0.00%</td>
+														<td>14.479</td>
+													</tr>
+													<tr>
+														<td>10</td>
+														<td>10.138</td>
+														<td>8.936</td>
+														<td>3.564</td>
+														<td>5.701</td>
+														<td>12.674</td>
+														<td>17.236</td>
+														<td>0.00%</td>
+														<td>14.082</td>
+													</tr>
+													<tr>
+														<td>15</td>
+														<td>9.954</td>
+														<td>8.759</td>
+														<td>3.325</td>
+														<td>5.458</td>
+														<td>12.517</td>
+														<td>17.151</td>
+														<td>0.10%</td>
+														<td>13.864</td>
+													</tr>
+													<tr>
+														<td>20</td>
+														<td>9.842</td>
+														<td>8.722</td>
+														<td>3.24</td>
+														<td>5.445</td>
+														<td>12.32</td>
+														<td>16.739</td>
+														<td>0.00%</td>
+														<td>13.803</td>
+													</tr>
+													<tr>
+														<td>40</td>
+														<td>10.434</td>
+														<td>9.283</td>
+														<td>3.336</td>
+														<td>5.697</td>
+														<td>13.196</td>
+														<td>17.922</td>
+														<td>0.10%</td>
+														<td>14.762</td>
+													</tr>
+													<tr>
+														<td>80</td>
+														<td>10.515</td>
+														<td>9.384</td>
+														<td>3.436</td>
+														<td>5.94</td>
+														<td>13.197</td>
+														<td>17.777</td>
+														<td>0.00%</td>
+														<td>14.636</td>
+													</tr>
+													<tr>
+														<td>120</td>
+														<td>11.001</td>
+														<td>9.836</td>
+														<td>3.623</td>
+														<td>6.145</td>
+														<td>13.799</td>
+														<td>18.848</td>
+														<td>0.10%</td>
+														<td>14.992</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+							
+									<div id="2.5mins" class="connectivityTabContent" style="display:none">
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th># Connections</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>5</td>
+														<td>3.001</td>
+														<td>2.714</td>
+														<td>1.275</td>
+														<td>1.879</td>
+														<td>3.631</td>
+														<td>4.852</td>
+														<td>0.00%</td>
+														<td>14.603</td>
+													</tr>
+													<tr>
+														<td>10</td>
+														<td>2.912</td>
+														<td>2.599</td>
+														<td>1.234</td>
+														<td>1.799</td>
+														<td>3.563</td>
+														<td>4.734</td>
+														<td>0.21%</td>
+														<td>14.57</td>
+													</tr>
+													<tr>
+														<td>15</td>
+														<td>2.898</td>
+														<td>2.572</td>
+														<td>1.196</td>
+														<td>1.75</td>
+														<td>3.559</td>
+														<td>4.755</td>
+														<td>0.00%</td>
+														<td>14.577</td>
+													</tr>
+													<tr>
+														<td>20</td>
+														<td>2.809</td>
+														<td>2.516</td>
+														<td>1.156</td>
+														<td>1.693</td>
+														<td>3.421</td>
+														<td>4.586</td>
+														<td>0.21%</td>
+														<td>14.38</td>
+													</tr>
+													<tr>
+														<td>40</td>
+														<td>2.794</td>
+														<td>2.501</td>
+														<td>1.122</td>
+														<td>1.687</td>
+														<td>3.415</td>
+														<td>4.6</td>
+														<td>0.00%</td>
+														<td>14.777</td>
+													</tr>
+													<tr>
+														<td>80</td>
+														<td>2.824</td>
+														<td>2.52</td>
+														<td>1.153</td>
+														<td>1.721</td>
+														<td>3.44</td>
+														<td>4.607</td>
+														<td>0.00%</td>
+														<td>15.261</td>
+													</tr>
+													<tr>
+														<td>120</td>
+														<td>3.016</td>
+														<td>2.698</td>
+														<td>1.23</td>
+														<td>1.852</td>
+														<td>3.713</td>
+														<td>4.954</td>
+														<td>0.10%</td>
+														<td>16.505</td>
+													</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									</div>
+									
+									<div id="1min" class="connectivityTabContent" style="display:none">
+										<div class="table-wrapper" style="text-align: center;">
+											<table>
+												<thead style="font-size: 1.2em">
+													<tr>
+														<th># Connections</th>
+														<th>t<sub>mean</sub> (s)</th>
+														<th>t<sub>median</sub> (s)</th>
+														<th>t<sub>10%</sub> (s)</th>
+														<th>t<sub>25%</sub> (s)</th>
+														<th>t<sub>75%</sub> (s)</th>
+														<th>t<sub>90%</sub> (s)</th>
+														<th>s<sub>r</sub></th>
+														<th>Bandwidth (kbps)</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>5</td>
+														<td>1.437</td>
+														<td>1.331</td>
+														<td>0.689</td>
+														<td>0.981</td>
+														<td>1.711</td>
+														<td>2.228</td>
+														<td>0.12%</td>
+														<td>14.537</td>
+													</tr>
+													<tr>
+														<td>10</td>
+														<td>1.389</td>
+														<td>1.266</td>
+														<td>0.686</td>
+														<td>0.942</td>
+														<td>1.651</td>
+														<td>2.167</td>
+														<td>0.32%</td>
+														<td>14.528</td>
+													</tr>
+													<tr>
+														<td>15</td>
+														<td>1.389</td>
+														<td>1.26</td>
+														<td>0.675</td>
+														<td>0.919</td>
+														<td>1.664</td>
+														<td>2.17</td>
+														<td>0.11%</td>
+														<td>15.188</td>
+													</tr>
+													<tr>
+														<td>20</td>
+														<td>1.351</td>
+														<td>1.221</td>
+														<td>0.659</td>
+														<td>0.891</td>
+														<td>1.617</td>
+														<td>2.126</td>
+														<td>0.33%</td>
+														<td>15.111</td>
+													</tr>
+													<tr>
+														<td>40</td>
+														<td>1.38</td>
+														<td>1.242</td>
+														<td>0.67</td>
+														<td>0.906</td>
+														<td>1.647</td>
+														<td>2.175</td>
+														<td>0.50%</td>
+														<td>16.751</td>
+													</tr>
+													<tr>
+														<td>80</td>
+														<td>1.341</td>
+														<td>1.204</td>
+														<td>0.664</td>
+														<td>0.895</td>
+														<td>1.601</td>
+														<td>2.107</td>
+														<td>0.32%</td>
+														<td>17.698</td>
+													</tr>
+													<tr>
+														<td>120</td>
+														<td>1.328</td>
+														<td>1.182</td>
+														<td>0.643</td>
+														<td>0.88</td>
+														<td>1.597</td>
+														<td>2.11</td>
+														<td>0.10%</td>
+														<td>19.508</td>
+													</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									</div>
+							</section>
+
+						<!-- Four -->
+							<section id="Blocktorrent" class="wrapper alt style2 tabcontent" style="display:none">
+								<div class="inner">
+									<h3 class="major">Blocktorrent</h3>
+									
+									<ul class="actions">
+									  <li><a class="blocktorrentTab button special" onclick="openblocktorrentTab(event, '0.1MB_blocktorrent')">0.1 MB</a></li>
+									  <li><a class="blocktorrentTab button" onclick="openblocktorrentTab(event, '0.25MB_blocktorrent')">0.25 MB</a></li>
+									  <li><a class="blocktorrentTab button" onclick="openblocktorrentTab(event, '0.5MB_blocktorrent')">0.5 MB</a></li>
+									  <li><a class="blocktorrentTab button" onclick="openblocktorrentTab(event, '1MB_blocktorrent')">1 MB</a></li>
+									  <li><a class="blocktorrentTab button" onclick="openblocktorrentTab(event, '2MB_blocktorrent')">2 MB</a></li>
+									  <li><a class="blocktorrentTab button" onclick="openblocktorrentTab(event, '4MB_blocktorrent')">4 MB</a></li>
+									  <li><a class="blocktorrentTab button" onclick="openblocktorrentTab(event, '8MB_blocktorrent')">8 MB</a></li>
+									  <li><a class="blocktorrentTab button" onclick="openblocktorrentTab(event, '16MB_blocktorrent')">16 MB</a></li>
+									  <li><a class="blocktorrentTab button" onclick="openblocktorrentTab(event, '32MB_blocktorrent')">32 MB</a></li>
+									</ul>
+									
+									<div id="0.1MB_blocktorrent" class="blocktorrentTabContent table-wrapper" style="text-align: center;display:block">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>2.254</td>
+													<td>2.034</td>
+													<td>0.952</td>
+													<td>1.394</td>
+													<td>2.721</td>
+													<td>3.617</td>
+													<td>0.10%</td>
+													<td>2.716</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>2.454</td>
+													<td>2.222</td>
+													<td>1.311</td>
+													<td>1.749</td>
+													<td>2.713</td>
+													<td>3.475</td>
+													<td>0.00%</td>
+													<td>2.732</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>3.002</td>
+													<td>2.403</td>
+													<td>1.708</td>
+													<td>2.072</td>
+													<td>2.936</td>
+													<td>4.233</td>
+													<td>0.00%</td>
+													<td>2.746</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>3.383</td>
+													<td>2.509</td>
+													<td>1.815</td>
+													<td>2.141</td>
+													<td>3.261</td>
+													<td>4.741</td>
+													<td>0.00%</td>
+													<td>2.771</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>3.241</td>
+													<td>2.742</td>
+													<td>1.879</td>
+													<td>2.275</td>
+													<td>3.476</td>
+													<td>4.605</td>
+													<td>0.11%</td>
+													<td>2.821</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>3.403</td>
+													<td>3.08</td>
+													<td>1.906</td>
+													<td>2.436</td>
+													<td>3.882</td>
+													<td>5.124</td>
+													<td>0.00%</td>
+													<td>2.926</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>4.494</td>
+													<td>4.006</td>
+													<td>2.428</td>
+													<td>3.112</td>
+													<td>5.125</td>
+													<td>7.079</td>
+													<td>0.10%</td>
+													<td>3.166</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>6.719</td>
+													<td>5.796</td>
+													<td>3.17</td>
+													<td>4.369</td>
+													<td>7.67</td>
+													<td>10.857</td>
+													<td>0.00%</td>
+													<td>3.712</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="0.25MB_blocktorrent" class="blocktorrentTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>5.039</td>
+													<td>4.481</td>
+													<td>1.837</td>
+													<td>2.889</td>
+													<td>6.214</td>
+													<td>8.447</td>
+													<td>0.00%</td>
+													<td>6.705</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>5.416</td>
+													<td>4.837</td>
+													<td>2.652</td>
+													<td>3.675</td>
+													<td>6.048</td>
+													<td>7.722</td>
+													<td>0.00%</td>
+													<td>6.721</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>7.149</td>
+													<td>5.26</td>
+													<td>3.676</td>
+													<td>4.481</td>
+													<td>6.338</td>
+													<td>10.151</td>
+													<td>0.11%</td>
+													<td>6.735</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>7.878</td>
+													<td>5.33</td>
+													<td>3.876</td>
+													<td>4.644</td>
+													<td>6.935</td>
+													<td>11.066</td>
+													<td>0.00%</td>
+													<td>6.759</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>7.037</td>
+													<td>5.437</td>
+													<td>3.986</td>
+													<td>4.673</td>
+													<td>6.97</td>
+													<td>9.747</td>
+													<td>0.00%</td>
+													<td>6.81</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>6.633</td>
+													<td>5.763</td>
+													<td>4.17</td>
+													<td>4.923</td>
+													<td>7.111</td>
+													<td>9.28</td>
+													<td>0.11%</td>
+													<td>6.923</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>6.961</td>
+													<td>6.316</td>
+													<td>4.137</td>
+													<td>5.21</td>
+													<td>7.811</td>
+													<td>10.107</td>
+													<td>0.00%</td>
+													<td>7.155</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>8.974</td>
+													<td>8.023</td>
+													<td>5.053</td>
+													<td>6.342</td>
+													<td>10.171</td>
+													<td>13.866</td>
+													<td>0.10%</td>
+													<td>7.702</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="0.5MB_blocktorrent" class="blocktorrentTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>9.785</td>
+													<td>8.687</td>
+													<td>3.344</td>
+													<td>5.447</td>
+													<td>12.126</td>
+													<td>16.507</td>
+													<td>0.11%</td>
+													<td>13.354</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>10.495</td>
+													<td>9.263</td>
+													<td>4.983</td>
+													<td>6.939</td>
+													<td>11.719</td>
+													<td>15.227</td>
+													<td>0.11%</td>
+													<td>13.369</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>14.763</td>
+													<td>10.026</td>
+													<td>7.028</td>
+													<td>8.505</td>
+													<td>11.97</td>
+													<td>19.722</td>
+													<td>0.00%</td>
+													<td>13.385</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>15.866</td>
+													<td>10.129</td>
+													<td>7.328</td>
+													<td>8.768</td>
+													<td>13.421</td>
+													<td>22.013</td>
+													<td>0.11%</td>
+													<td>13.411</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>13.8</td>
+													<td>10.279</td>
+													<td>7.635</td>
+													<td>8.902</td>
+													<td>13.185</td>
+													<td>19.128</td>
+													<td>0.21%</td>
+													<td>13.46</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>12.293</td>
+													<td>10.341</td>
+													<td>7.683</td>
+													<td>8.904</td>
+													<td>12.618</td>
+													<td>17.102</td>
+													<td>0.11%</td>
+													<td>13.566</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>11.862</td>
+													<td>10.712</td>
+													<td>7.864</td>
+													<td>9.233</td>
+													<td>12.828</td>
+													<td>16.267</td>
+													<td>0.00%</td>
+													<td>13.805</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>13.05</td>
+													<td>11.879</td>
+													<td>7.971</td>
+													<td>9.976</td>
+													<td>14.53</td>
+													<td>18.834</td>
+													<td>0.10%</td>
+													<td>14.353</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+															
+									<div id="1MB_blocktorrent" class="blocktorrentTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>19.541</td>
+													<td>17.244</td>
+													<td>6.618</td>
+													<td>10.843</td>
+													<td>24.135</td>
+													<td>33.197</td>
+													<td>0.00%</td>
+													<td>26.652</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>20.923</td>
+													<td>18.311</td>
+													<td>9.708</td>
+													<td>13.664</td>
+													<td>23.183</td>
+													<td>30.452</td>
+													<td>0.11%</td>
+													<td>26.667</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>34.93</td>
+													<td>20.142</td>
+													<td>14.079</td>
+													<td>17.062</td>
+													<td>23.929</td>
+													<td>40.171</td>
+													<td>0.32%</td>
+													<td>26.723</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>35.047</td>
+													<td>20.075</td>
+													<td>14.611</td>
+													<td>17.34</td>
+													<td>26.888</td>
+													<td>44.541</td>
+													<td>0.10%</td>
+													<td>26.746</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>27.214</td>
+													<td>19.732</td>
+													<td>14.651</td>
+													<td>17.144</td>
+													<td>25.111</td>
+													<td>37.192</td>
+													<td>0.00%</td>
+													<td>26.77</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>23.397</td>
+													<td>19.748</td>
+													<td>14.99</td>
+													<td>17.176</td>
+													<td>23.815</td>
+													<td>33.129</td>
+													<td>0.11%</td>
+													<td>26.874</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>21.675</td>
+													<td>19.666</td>
+													<td>14.863</td>
+													<td>17.221</td>
+													<td>22.949</td>
+													<td>29.429</td>
+													<td>0.11%</td>
+													<td>27.109</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>22.302</td>
+													<td>20.647</td>
+													<td>15.477</td>
+													<td>18.029</td>
+													<td>23.939</td>
+													<td>29.381</td>
+													<td>0.11%</td>
+													<td>27.661</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="2MB_blocktorrent" class="blocktorrentTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>40.539</td>
+													<td>35.377</td>
+													<td>14.273</td>
+													<td>22.761</td>
+													<td>49.51</td>
+													<td>67.911</td>
+													<td>0.00%</td>
+													<td>53.258</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>44.1</td>
+													<td>37.001</td>
+													<td>19.983</td>
+													<td>27.672</td>
+													<td>47.056</td>
+													<td>62.193</td>
+													<td>0.00%</td>
+													<td>53.277</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>214.699</td>
+													<td>41.122</td>
+													<td>28.367</td>
+													<td>34.772</td>
+													<td>48.82</td>
+													<td>84.696</td>
+													<td>0.10%</td>
+													<td>53.563</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>166.061</td>
+													<td>40.515</td>
+													<td>29.248</td>
+													<td>34.866</td>
+													<td>54.385</td>
+													<td>92.013</td>
+													<td>0.00%</td>
+													<td>53.597</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>73.731</td>
+													<td>39.975</td>
+													<td>29.693</td>
+													<td>34.846</td>
+													<td>50.549</td>
+													<td>75.56</td>
+													<td>0.20%</td>
+													<td>53.518</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>45.585</td>
+													<td>39.461</td>
+													<td>29.97</td>
+													<td>34.635</td>
+													<td>47.012</td>
+													<td>63.06</td>
+													<td>0.31%</td>
+													<td>53.621</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>42.457</td>
+													<td>39.027</td>
+													<td>29.857</td>
+													<td>34.571</td>
+													<td>43.908</td>
+													<td>53.486</td>
+													<td>0.00%</td>
+													<td>53.814</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>41.743</td>
+													<td>38.735</td>
+													<td>29.761</td>
+													<td>34.343</td>
+													<td>43.203</td>
+													<td>50.834</td>
+													<td>0.11%</td>
+													<td>54.316</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="4MB_blocktorrent" class="blocktorrentTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>87.503</td>
+													<td>75.196</td>
+													<td>31.605</td>
+													<td>49.574</td>
+													<td>105.061</td>
+													<td>143.248</td>
+													<td>0.11%</td>
+													<td>107.158</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>140.975</td>
+													<td>79.092</td>
+													<td>44.619</td>
+													<td>60.318</td>
+													<td>99.714</td>
+													<td>133.399</td>
+													<td>0.41%</td>
+													<td>107.037</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>297.364</td>
+													<td>85.936</td>
+													<td>59.349</td>
+													<td>72.662</td>
+													<td>102.964</td>
+													<td>190.979</td>
+													<td>0.21%</td>
+													<td>108.049</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>204.721</td>
+													<td>84.481</td>
+													<td>60.627</td>
+													<td>72.797</td>
+													<td>112.193</td>
+													<td>187.314</td>
+													<td>0.10%</td>
+													<td>108.38</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>129.816</td>
+													<td>82.985</td>
+													<td>61.361</td>
+													<td>72.341</td>
+													<td>103.979</td>
+													<td>142.474</td>
+													<td>0.11%</td>
+													<td>107.866</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>92.672</td>
+													<td>79.858</td>
+													<td>60.517</td>
+													<td>70.512</td>
+													<td>92.18</td>
+													<td>113.093</td>
+													<td>0.42%</td>
+													<td>107.635</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>89.614</td>
+													<td>78.991</td>
+													<td>60.955</td>
+													<td>70.93</td>
+													<td>87.072</td>
+													<td>100.864</td>
+													<td>0.20%</td>
+													<td>107.589</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>85.404</td>
+													<td>77.793</td>
+													<td>60.523</td>
+													<td>70.206</td>
+													<td>83.997</td>
+													<td>97.088</td>
+													<td>0.10%</td>
+													<td>107.872</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+								
+									<div id="8MB_blocktorrent" class="blocktorrentTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>920.43</td>
+													<td>550.25</td>
+													<td>285.11</td>
+													<td>432.49</td>
+													<td>774.54</td>
+													<td>1000.33</td>
+													<td>0.40%</td>
+													<td>797.06</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>904.49</td>
+													<td>177.841</td>
+													<td>109.487</td>
+													<td>140.411</td>
+													<td>223.686</td>
+													<td>306.79</td>
+													<td>0.10%</td>
+													<td>218.827</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>1167.48</td>
+													<td>206.761</td>
+													<td>137.216</td>
+													<td>175.171</td>
+													<td>246.266</td>
+													<td>511.69</td>
+													<td>0.71%</td>
+													<td>224.248</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>834.048</td>
+													<td>192.197</td>
+													<td>136.867</td>
+													<td>165.428</td>
+													<td>245.247</td>
+													<td>342.226</td>
+													<td>0.33%</td>
+													<td>223.189</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>589.965</td>
+													<td>187.211</td>
+													<td>140.364</td>
+													<td>165.583</td>
+													<td>217.576</td>
+													<td>263.143</td>
+													<td>0.41%</td>
+													<td>220.816</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>394.198</td>
+													<td>170.955</td>
+													<td>131.802</td>
+													<td>153.715</td>
+													<td>189.218</td>
+													<td>220.501</td>
+													<td>0.64%</td>
+													<td>218.126</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>371.367</td>
+													<td>169.043</td>
+													<td>134.538</td>
+													<td>155.338</td>
+													<td>182.495</td>
+													<td>209.649</td>
+													<td>0.62%</td>
+													<td>216.592</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>305.496</td>
+													<td>160.439</td>
+													<td>129.205</td>
+													<td>148.389</td>
+													<td>171.686</td>
+													<td>198.836</td>
+													<td>0.11%</td>
+													<td>215.595</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="16MB_blocktorrent" class="blocktorrentTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>2</td>
+													<td>3966.91</td>
+													<td>643.107</td>
+													<td>498.468</td>
+													<td>565.687</td>
+													<td>821.007</td>
+													<td>3680.61</td>
+													<td>1.27%</td>
+													<td>555.002</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>3156.75</td>
+													<td>532.77</td>
+													<td>350.681</td>
+													<td>459.771</td>
+													<td>650.913</td>
+													<td>1914.76</td>
+													<td>0.32%</td>
+													<td>527.44</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>1985.54</td>
+													<td>533.924</td>
+													<td>412.492</td>
+													<td>474.108</td>
+													<td>616.032</td>
+													<td>918.866</td>
+													<td>1.11%</td>
+													<td>507.928</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>1399.35</td>
+													<td>482.758</td>
+													<td>396.894</td>
+													<td>444.112</td>
+													<td>529.131</td>
+													<td>657.746</td>
+													<td>1.09%</td>
+													<td>472.703</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>1014.01</td>
+													<td>417.828</td>
+													<td>349.33</td>
+													<td>388.556</td>
+													<td>447.426</td>
+													<td>522.194</td>
+													<td>0.88%</td>
+													<td>453.272</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>875.101</td>
+													<td>411.649</td>
+													<td>354.212</td>
+													<td>387.647</td>
+													<td>436.402</td>
+													<td>520.621</td>
+													<td>1.15%</td>
+													<td>442.942</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>880.847</td>
+													<td>418.052</td>
+													<td>366.065</td>
+													<td>396.561</td>
+													<td>442.795</td>
+													<td>540.647</td>
+													<td>0.82%</td>
+													<td>437.402</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="32MB_blocktorrent" class="blocktorrentTabContent table-wrapper" style="text-align: center; display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>2</td>
+													<td>73073</td>
+													<td>69890.5</td>
+													<td>66692.5</td>
+													<td>69542.1</td>
+													<td>70744</td>
+													<td>83283.3</td>
+													<td>1.85%</td>
+													<td>1908.46</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>25351</td>
+													<td>20903.9</td>
+													<td>20151.4</td>
+													<td>20636.1</td>
+													<td>21992.5</td>
+													<td>55793.7</td>
+													<td>0.97%</td>
+													<td>1622.29</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>4820.23</td>
+													<td>2289.27</td>
+													<td>2067.3</td>
+													<td>2166.68</td>
+													<td>2937.01</td>
+													<td>10640.9</td>
+													<td>1.73%</td>
+													<td>1260.02</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>3422.21</td>
+													<td>1779.9</td>
+													<td>1640.4</td>
+													<td>1707.8</td>
+													<td>1928.48</td>
+													<td>3684.74</td>
+													<td>2.02%</td>
+													<td>1071.75</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>2799.3</td>
+													<td>1708.94</td>
+													<td>1602.95</td>
+													<td>1656.6</td>
+													<td>1792.26</td>
+													<td>2976.9</td>
+													<td>1.91%</td>
+													<td>969.017</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>2574.66</td>
+													<td>1559.79</td>
+													<td>1468.87</td>
+													<td>1516.28</td>
+													<td>1622.84</td>
+													<td>2456.6</td>
+													<td>1.85%</td>
+													<td>920.863</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>2587.95</td>
+													<td>1436.36</td>
+													<td>1350.28</td>
+													<td>1395.46</td>
+													<td>1494.71</td>
+													<td>2107.8</td>
+													<td>1.13%</td>
+													<td>894.942</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>						
+								</div>
+							</section>
+
+						<!-- Four -->
+							<section id="Blocktorrent-spv" class="wrapper alt style2 tabcontent" style="display:none">
+								<div class="inner">
+									<h3 class="major">Blocktorrent-spv</h3>
+									
+									<ul class="actions">
+									  <li><a class="spvTab button special" onclick="openspvTab(event, '0.1MB_spv')">0.1 MB</a></li>
+									  <li><a class="spvTab button" onclick="openspvTab(event, '0.25MB_spv')">0.25 MB</a></li>
+									  <li><a class="spvTab button" onclick="openspvTab(event, '0.5MB_spv')">0.5 MB</a></li>
+									  <li><a class="spvTab button" onclick="openspvTab(event, '1MB_spv')">1 MB</a></li>
+									  <li><a class="spvTab button" onclick="openspvTab(event, '2MB_spv')">2 MB</a></li>
+									  <li><a class="spvTab button" onclick="openspvTab(event, '4MB_spv')">4 MB</a></li>
+									  <li><a class="spvTab button" onclick="openspvTab(event, '8MB_spv')">8 MB</a></li>
+									  <li><a class="spvTab button" onclick="openspvTab(event, '16MB_spv')">16 MB</a></li>
+									  <li><a class="spvTab button" onclick="openspvTab(event, '32MB_spv')">32 MB</a></li>
+									</ul>
+									
+									<div id="0.1MB_spv" class="spvTabContent table-wrapper" style="text-align: center;display:block">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>2.254</td>
+													<td>2.034</td>
+													<td>0.952</td>
+													<td>1.394</td>
+													<td>2.721</td>
+													<td>3.617</td>
+													<td>0.10%</td>
+													<td>2.716</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>2.361</td>
+													<td>2.026</td>
+													<td>1.194</td>
+													<td>1.555</td>
+													<td>2.524</td>
+													<td>3.31</td>
+													<td>0.00%</td>
+													<td>2.77</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>2.756</td>
+													<td>1.943</td>
+													<td>1.406</td>
+													<td>1.643</td>
+													<td>2.602</td>
+													<td>4.396</td>
+													<td>0.00%</td>
+													<td>2.788</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>3.286</td>
+													<td>2.06</td>
+													<td>1.453</td>
+													<td>1.641</td>
+													<td>3.076</td>
+													<td>5.477</td>
+													<td>0.00%</td>
+													<td>2.816</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>2.986</td>
+													<td>2.112</td>
+													<td>1.437</td>
+													<td>1.656</td>
+													<td>3.065</td>
+													<td>5.071</td>
+													<td>0.00%</td>
+													<td>2.866</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>2.632</td>
+													<td>2.088</td>
+													<td>1.405</td>
+													<td>1.643</td>
+													<td>2.857</td>
+													<td>4.26</td>
+													<td>0.00%</td>
+													<td>2.962</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>2.766</td>
+													<td>2.185</td>
+													<td>1.416</td>
+													<td>1.699</td>
+													<td>3.032</td>
+													<td>4.623</td>
+													<td>0.00%</td>
+													<td>3.172</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>3.373</td>
+													<td>2.496</td>
+													<td>1.432</td>
+													<td>1.846</td>
+													<td>3.599</td>
+													<td>5.688</td>
+													<td>0.10%</td>
+													<td>3.655</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="0.25MB_spv" class="spvTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>5.039</td>
+													<td>4.481</td>
+													<td>1.837</td>
+													<td>2.889</td>
+													<td>6.214</td>
+													<td>8.447</td>
+													<td>0.00%</td>
+													<td>6.705</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>5.139</td>
+													<td>4.451</td>
+													<td>2.307</td>
+													<td>3.232</td>
+													<td>5.658</td>
+													<td>7.488</td>
+													<td>0.00%</td>
+													<td>6.758</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>6.139</td>
+													<td>4.182</td>
+													<td>2.917</td>
+													<td>3.485</td>
+													<td>5.655</td>
+													<td>9.724</td>
+													<td>0.00%</td>
+													<td>6.775</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>7.823</td>
+													<td>4.301</td>
+													<td>2.949</td>
+													<td>3.346</td>
+													<td>7.275</td>
+													<td>13.324</td>
+													<td>0.00%</td>
+													<td>6.803</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>7.004</td>
+													<td>4.255</td>
+													<td>2.707</td>
+													<td>3.156</td>
+													<td>6.7</td>
+													<td>11.832</td>
+													<td>0.00%</td>
+													<td>6.853</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>5.231</td>
+													<td>3.898</td>
+													<td>2.529</td>
+													<td>3.021</td>
+													<td>5.547</td>
+													<td>8.517</td>
+													<td>0.00%</td>
+													<td>6.953</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>4.842</td>
+													<td>3.85</td>
+													<td>2.436</td>
+													<td>2.942</td>
+													<td>5.287</td>
+													<td>8.052</td>
+													<td>0.00%</td>
+													<td>7.156</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>5.083</td>
+													<td>3.992</td>
+													<td>2.464</td>
+													<td>3.043</td>
+													<td>5.546</td>
+													<td>8.575</td>
+													<td>0.00%</td>
+													<td>7.654</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="0.5MB_spv" class="spvTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>9.785</td>
+													<td>8.687</td>
+													<td>3.344</td>
+													<td>5.447</td>
+													<td>12.126</td>
+													<td>16.507</td>
+													<td>0.11%</td>
+													<td>13.354</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>10.078</td>
+													<td>8.589</td>
+													<td>4.242</td>
+													<td>6.11</td>
+													<td>11</td>
+													<td>14.752</td>
+													<td>0.21%</td>
+													<td>13.406</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>12.204</td>
+													<td>7.933</td>
+													<td>5.424</td>
+													<td>6.583</td>
+													<td>11.007</td>
+													<td>19.615</td>
+													<td>0.00%</td>
+													<td>13.423</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>16.829</td>
+													<td>8.425</td>
+													<td>5.593</td>
+													<td>6.35</td>
+													<td>14.937</td>
+													<td>28.522</td>
+													<td>0.00%</td>
+													<td>13.457</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>13.877</td>
+													<td>7.864</td>
+													<td>4.984</td>
+													<td>5.786</td>
+													<td>13.001</td>
+													<td>24.095</td>
+													<td>0.00%</td>
+													<td>13.506</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>9.939</td>
+													<td>6.773</td>
+													<td>4.168</td>
+													<td>5.048</td>
+													<td>10.095</td>
+													<td>16.803</td>
+													<td>0.00%</td>
+													<td>13.602</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>8.236</td>
+													<td>6.339</td>
+													<td>4.013</td>
+													<td>4.863</td>
+													<td>8.933</td>
+													<td>13.754</td>
+													<td>0.11%</td>
+													<td>13.81</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>7.799</td>
+													<td>6.247</td>
+													<td>3.914</td>
+													<td>4.824</td>
+													<td>8.652</td>
+													<td>12.708</td>
+													<td>0.11%</td>
+													<td>14.355</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+															
+									<div id="1MB_spv" class="spvTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>19.541</td>
+													<td>17.244</td>
+													<td>6.618</td>
+													<td>10.843</td>
+													<td>24.135</td>
+													<td>33.197</td>
+													<td>0.00%</td>
+													<td>26.652</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>19.853</td>
+													<td>16.909</td>
+													<td>8.193</td>
+													<td>12.025</td>
+													<td>21.732</td>
+													<td>28.938</td>
+													<td>0.00%</td>
+													<td>26.704</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>27.558</td>
+													<td>15.741</td>
+													<td>10.544</td>
+													<td>12.938</td>
+													<td>22.252</td>
+													<td>40.33</td>
+													<td>0.10%</td>
+													<td>26.749</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>40.026</td>
+													<td>16.829</td>
+													<td>10.912</td>
+													<td>12.46</td>
+													<td>31.275</td>
+													<td>60.051</td>
+													<td>0.11%</td>
+													<td>26.811</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>27.888</td>
+													<td>15.428</td>
+													<td>9.834</td>
+													<td>11.369</td>
+													<td>26.671</td>
+													<td>49.545</td>
+													<td>0.00%</td>
+													<td>26.853</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>19.008</td>
+													<td>12.168</td>
+													<td>7.69</td>
+													<td>9.265</td>
+													<td>18.988</td>
+													<td>32.792</td>
+													<td>0.11%</td>
+													<td>26.96</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>13.942</td>
+													<td>10.694</td>
+													<td>6.704</td>
+													<td>8.205</td>
+													<td>15.512</td>
+													<td>22.907</td>
+													<td>0.11%</td>
+													<td>27.206</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>12.779</td>
+													<td>10.191</td>
+													<td>6.642</td>
+													<td>7.996</td>
+													<td>13.196</td>
+													<td>20.347</td>
+													<td>0.11%</td>
+													<td>28.125</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="2MB_spv" class="spvTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>40.539</td>
+													<td>35.377</td>
+													<td>14.273</td>
+													<td>22.761</td>
+													<td>49.51</td>
+													<td>67.911</td>
+													<td>0.00%</td>
+													<td>53.258</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>45.703</td>
+													<td>34.193</td>
+													<td>16.797</td>
+													<td>24.53</td>
+													<td>43.833</td>
+													<td>58.996</td>
+													<td>0.10%</td>
+													<td>53.338</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>115.413</td>
+													<td>32.226</td>
+													<td>21.484</td>
+													<td>26.421</td>
+													<td>46.862</td>
+													<td>85.441</td>
+													<td>0.31%</td>
+													<td>53.609</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>126.826</td>
+													<td>34.916</td>
+													<td>22.065</td>
+													<td>25.392</td>
+													<td>68.535</td>
+													<td>130.695</td>
+													<td>0.11%</td>
+													<td>54.062</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>73.715</td>
+													<td>31.913</td>
+													<td>20.742</td>
+													<td>23.819</td>
+													<td>56.516</td>
+													<td>93.353</td>
+													<td>0.00%</td>
+													<td>54.002</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>34.126</td>
+													<td>23.884</td>
+													<td>15.935</td>
+													<td>18.665</td>
+													<td>35.869</td>
+													<td>54.248</td>
+													<td>0.11%</td>
+													<td>54.051</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>23.989</td>
+													<td>18.712</td>
+													<td>12.623</td>
+													<td>15.105</td>
+													<td>23.816</td>
+													<td>33.054</td>
+													<td>0.11%</td>
+													<td>54.717</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>22.559</td>
+													<td>16.752</td>
+													<td>11.41</td>
+													<td>13.509</td>
+													<td>22.557</td>
+													<td>37.407</td>
+													<td>0.00%</td>
+													<td>57.551</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="4MB_spv" class="spvTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>87.503</td>
+													<td>75.196</td>
+													<td>31.605</td>
+													<td>49.574</td>
+													<td>105.061</td>
+													<td>143.248</td>
+													<td>0.11%</td>
+													<td>107.158</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>197.636</td>
+													<td>71.418</td>
+													<td>36.373</td>
+													<td>51.8</td>
+													<td>90.918</td>
+													<td>122.816</td>
+													<td>0.22%</td>
+													<td>107.156</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>266.527</td>
+													<td>67.019</td>
+													<td>44.402</td>
+													<td>54.253</td>
+													<td>101.203</td>
+													<td>195.972</td>
+													<td>0.32%</td>
+													<td>108.573</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>232.639</td>
+													<td>75.037</td>
+													<td>45.66</td>
+													<td>52.924</td>
+													<td>145.902</td>
+													<td>309.362</td>
+													<td>0.00%</td>
+													<td>111.597</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>161.522</td>
+													<td>65.337</td>
+													<td>44.239</td>
+													<td>50.524</td>
+													<td>103.848</td>
+													<td>170.825</td>
+													<td>0.33%</td>
+													<td>111.593</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>84.829</td>
+													<td>48.086</td>
+													<td>36.249</td>
+													<td>41.144</td>
+													<td>59.192</td>
+													<td>89.824</td>
+													<td>0.31%</td>
+													<td>110.469</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>56.206</td>
+													<td>36.454</td>
+													<td>26.457</td>
+													<td>30.615</td>
+													<td>44.995</td>
+													<td>69.997</td>
+													<td>0.39%</td>
+													<td>113.659</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>44.04</td>
+													<td>30.059</td>
+													<td>20.519</td>
+													<td>24.803</td>
+													<td>37.931</td>
+													<td>60.085</td>
+													<td>0.32%</td>
+													<td>112.063</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+								
+									<div id="8MB_spv" class="spvTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>standard</td>
+													<td>920.43</td>
+													<td>550.25</td>
+													<td>285.11</td>
+													<td>432.49</td>
+													<td>774.54</td>
+													<td>1000.33</td>
+													<td>0.40%</td>
+													<td>797.06</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>967.924</td>
+													<td>164.354</td>
+													<td>92.162</td>
+													<td>123.964</td>
+													<td>206.354</td>
+													<td>301.193</td>
+													<td>0.10%</td>
+													<td>219.431</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>1182.01</td>
+													<td>154.16</td>
+													<td>100.149</td>
+													<td>122.071</td>
+													<td>279.511</td>
+													<td>1223.46</td>
+													<td>0.29%</td>
+													<td>228.137</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>899.415</td>
+													<td>159.788</td>
+													<td>100.873</td>
+													<td>117.418</td>
+													<td>330.808</td>
+													<td>1361.68</td>
+													<td>0.00%</td>
+													<td>239.584</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>507.309</td>
+													<td>125.018</td>
+													<td>94.867</td>
+													<td>106.256</td>
+													<td>168.075</td>
+													<td>314.619</td>
+													<td>0.43%</td>
+													<td>233.706</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>365.007</td>
+													<td>100.809</td>
+													<td>77.453</td>
+													<td>87.673</td>
+													<td>121.508</td>
+													<td>187.495</td>
+													<td>0.33%</td>
+													<td>228.12</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>280.877</td>
+													<td>79.823</td>
+													<td>60.475</td>
+													<td>69.445</td>
+													<td>94.821</td>
+													<td>134.178</td>
+													<td>0.32%</td>
+													<td>224.163</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>224.23</td>
+													<td>63.534</td>
+													<td>45.708</td>
+													<td>54.065</td>
+													<td>76.674</td>
+													<td>110.803</td>
+													<td>0.76%</td>
+													<td>219.672</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="16MB_spv" class="spvTabContent table-wrapper" style="text-align: center;display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>2</td>
+													<td>3497.49</td>
+													<td>509.425</td>
+													<td>364.242</td>
+													<td>431.072</td>
+													<td>694.168</td>
+													<td>4998.86</td>
+													<td>0.33%</td>
+													<td>551.714</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>3479.4</td>
+													<td>466.427</td>
+													<td>274.826</td>
+													<td>333.763</td>
+													<td>1397.2</td>
+													<td>6172.66</td>
+													<td>0.89%</td>
+													<td>565.103</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>1632.95</td>
+													<td>364.654</td>
+													<td>242.942</td>
+													<td>278.353</td>
+													<td>811.796</td>
+													<td>2947.07</td>
+													<td>0.42%</td>
+													<td>564.643</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>999.161</td>
+													<td>286.569</td>
+													<td>221.052</td>
+													<td>248.079</td>
+													<td>392.965</td>
+													<td>1336.65</td>
+													<td>0.86%</td>
+													<td>515.357</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>837.668</td>
+													<td>230.786</td>
+													<td>188.385</td>
+													<td>208.16</td>
+													<td>272.859</td>
+													<td>550.553</td>
+													<td>1.18%</td>
+													<td>474.169</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>622.126</td>
+													<td>200.405</td>
+													<td>165.099</td>
+													<td>182.065</td>
+													<td>226.893</td>
+													<td>326.371</td>
+													<td>0.64%</td>
+													<td>453.463</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>590.909</td>
+													<td>153.406</td>
+													<td>119.944</td>
+													<td>135.544</td>
+													<td>178.215</td>
+													<td>260.552</td>
+													<td>0.54%</td>
+													<td>441.741</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="32MB_spv" class="spvTabContent table-wrapper" style="text-align: center; display:none">
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th># Chunks</th>
+													<th>t<sub>mean</sub> (s)</th>
+													<th>t<sub>median</sub> (s)</th>
+													<th>t<sub>10%</sub> (s)</th>
+													<th>t<sub>25%</sub> (s)</th>
+													<th>t<sub>75%</sub> (s)</th>
+													<th>t<sub>90%</sub> (s)</th>
+													<th>s<sub>r</sub></th>
+													<th>Bandwidth (kbps)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>2</td>
+													<td>75768.6</td>
+													<td>72628.5</td>
+													<td>65531.5</td>
+													<td>72101.7</td>
+													<td>73701</td>
+													<td>84303.9</td>
+													<td>1.10%</td>
+													<td>2085.4</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>6029.87</td>
+													<td>2277.49</td>
+													<td>1445.7</td>
+													<td>1642.77</td>
+													<td>4415.43</td>
+													<td>26173.9</td>
+													<td>1.57%</td>
+													<td>1635.04</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>2767.36</td>
+													<td>1134.56</td>
+													<td>779.203</td>
+													<td>868.801</td>
+													<td>2321.75</td>
+													<td>9408.59</td>
+													<td>1.72%</td>
+													<td>1439.55</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>1830.97</td>
+													<td>706.526</td>
+													<td>571.386</td>
+													<td>621.618</td>
+													<td>1148.84</td>
+													<td>4328.15</td>
+													<td>1.08%</td>
+													<td>1180.92</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>1587.55</td>
+													<td>607.029</td>
+													<td>524.087</td>
+													<td>559.06</td>
+													<td>780.317</td>
+													<td>2365.37</td>
+													<td>2.63%</td>
+													<td>1030</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>1507.49</td>
+													<td>608.629</td>
+													<td>540.993</td>
+													<td>572.343</td>
+													<td>694.061</td>
+													<td>1360.07</td>
+													<td>1.92%</td>
+													<td>946.736</td>
+												</tr>
+												<tr>
+													<td>128</td>
+													<td>1521.31</td>
+													<td>530.649</td>
+													<td>469.205</td>
+													<td>497.235</td>
+													<td>597.145</td>
+													<td>1054.86</td>
+													<td>2.01%</td>
+													<td>908.986</td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>						
+								</div>
+							</section>
+							
+							
+						<!-- Six -->
+							<section id="Miners" class="wrapper alt style2 tabcontent" style="display:none">
+								<div class="inner">
+									<h3 class="major">Impact of Number of miners</h3>
+									
+									<ul class="actions">
+									  <li><a class="minersTab button special" onclick="openMinersTab(event, '16miners')">16 miners</a></li>
+									  <li><a class="minersTab button" onclick="openMinersTab(event, '32miners')">32 miners</a></li>
+									  <li><a class="minersTab button" onclick="openMinersTab(event, '64miners')">64 miners</a></li>
+									  <li><a class="minersTab button" onclick="openMinersTab(event, '128miners')">128 miners</a></li>
+									  <li><a class="minersTab button" onclick="openMinersTab(event, '256miners')">256 miners</a></li>
+									</ul>
+									
+									<div id="16miners" class="minersTabContent table-wrapper" style="text-align: center; display:block">
+										<table>
+											<thead style="font-size: 1.2em; text-align: right;">
+												<tr style="text-align: right;">
+													<th style="text-align: center;">Block Size (MB)</th>
+													<th style="text-align: center;">Block Interval</th>
+													<th style="text-align: center;">s<sub>r</sub></th>
+													<th style="text-align: center;">Throughput (tps)</th>
+												</tr>
+											</thead>
+											<tbody >
+												<tr>
+													<td>0.25</td>
+													<td>30s</td>
+													<td>0.76</td>
+													<td>33.4</td>
+												</tr>
+												<tr>
+													<td>0.1</td>
+													<td>10s</td>
+													<td>1.76</td>
+													<td>40</td>
+												</tr>
+												<tr>
+													<td>0.25</td>
+													<td>20s</td>
+													<td>1.11</td>
+													<td>50</td>
+												</tr>
+												<tr>
+													<td>0.25</td>
+													<td>15s</td>
+													<td>1.45</td>
+													<td>66.7</td>
+												</tr>
+												<tr>
+													<td>0.5</td>
+													<td>30s</td>
+													<td>0.98</td>
+													<td>66.7</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>1mins</td>
+													<td>0.74</td>
+													<td>66.7</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="32miners" class="minersTabContent table-wrapper" style="text-align: center; display:none">
+										<table>
+											<thead style="font-size: 1.2em;">
+												<tr style="text-align: right;">
+													<th style="text-align: center;">Block Size (MB)</th>
+													<th style="text-align: center;">Block Interval</th>
+													<th style="text-align: center;">s<sub>r</sub></th>
+													<th style="text-align: center;">Throughput (tps)</th>
+												</tr>
+											</thead>
+											<tbody style="text-align: center;">
+												<tr>
+													<td>0.25</td>
+													<td>30s</td>
+													<td>0.75</td>
+													<td>33.4</td>
+												</tr>
+												<tr>
+													<td>0.1</td>
+													<td>10s</td>
+													<td>1.86</td>
+													<td>40</td>
+												</tr>
+												<tr>
+													<td>0.25</td>
+													<td>20s</td>
+													<td>1.2</td>
+													<td>50</td>
+												</tr>
+												<tr>
+													<td>0.25</td>
+													<td>15s</td>
+													<td>1.65</td>
+													<td>66.7</td>
+												</tr>
+												<tr>
+													<td>0.5</td>
+													<td>30s</td>
+													<td>1.11</td>
+													<td>66.7</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>1mins</td>
+													<td>0.86</td>
+													<td>66.7</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="64miners" class="minersTabContent table-wrapper" style="text-align: center; display:none">
+										<table>
+											<thead style="font-size: 1.2em;">
+												<tr style="text-align: right;">
+													<th style="text-align: center;">Block Size (MB)</th>
+													<th style="text-align: center;">Block Interval</th>
+													<th style="text-align: center;">s<sub>r</sub></th>
+													<th style="text-align: center;">Throughput (tps)</th>
+												</tr>
+											</thead>
+											<tbody style="text-align: center;">
+												<tr>
+													<td>0.25</td>
+													<td>30s</td>
+													<td>0.97</td>
+													<td>33.4</td>
+												</tr>
+												<tr>
+													<td>0.1</td>
+													<td>10s</td>
+													<td>1.74</td>
+													<td>40</td>
+												</tr>
+												<tr>
+													<td>0.25</td>
+													<td>20s</td>
+													<td>1.16</td>
+													<td>50</td>
+												</tr>
+												<tr>
+													<td>0.25</td>
+													<td>15s</td>
+													<td>1.62</td>
+													<td>66.7</td>
+												</tr>
+												<tr>
+													<td>0.5</td>
+													<td>30s</td>
+													<td>1.13</td>
+													<td>66.7</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>1mins</td>
+													<td>0.88</td>
+													<td>66.7</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="128miners" class="minersTabContent table-wrapper" style="text-align: center; display:none">
+										<table>
+											<thead style="font-size: 1.2em;">
+												<tr style="text-align: right;">
+													<th style="text-align: center;">Block Size (MB)</th>
+													<th style="text-align: center;">Block Interval</th>
+													<th style="text-align: center;">s<sub>r</sub></th>
+													<th style="text-align: center;">Throughput (tps)</th>
+												</tr>
+											</thead>
+											<tbody style="text-align: center;">
+												<tr>
+													<td>0.25</td>
+													<td>30s</td>
+													<td>1.07</td>
+													<td>33.4</td>
+												</tr>
+												<tr>
+													<td>0.1</td>
+													<td>10s</td>
+													<td>1.9</td>
+													<td>40</td>
+												</tr>
+												<tr>
+													<td>0.25</td>
+													<td>20s</td>
+													<td>1.36</td>
+													<td>50</td>
+												</tr>
+												<tr>
+													<td>0.25</td>
+													<td>15s</td>
+													<td>1.8</td>
+													<td>66.7</td>
+												</tr>
+												<tr>
+													<td>0.5</td>
+													<td>30s</td>
+													<td>1.18</td>
+													<td>66.7</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>1mins</td>
+													<td>0.87</td>
+													<td>66.7</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<div id="256miners" class="minersTabContent table-wrapper" style="text-align: center; display:none">
+										<table>
+											<thead style="font-size: 1.2em;">
+												<tr style="text-align: right;">
+													<th style="text-align: center;">Block Size (MB)</th>
+													<th style="text-align: center;">Block Interval</th>
+													<th style="text-align: center;">s<sub>r</sub></th>
+													<th style="text-align: center;">Throughput (tps)</th>
+												</tr>
+											</thead>
+											<tbody style="text-align: center;">
+												<tr>
+													<td>0.25</td>
+													<td>30s</td>
+													<td>0.94</td>
+													<td>33.4</td>
+												</tr>
+												<tr>
+													<td>0.1</td>
+													<td>10s</td>
+													<td>1.9</td>
+													<td>40</td>
+												</tr>
+												<tr>
+													<td>0.25</td>
+													<td>20s</td>
+													<td>1.31</td>
+													<td>50</td>
+												</tr>
+												<tr>
+													<td>0.25</td>
+													<td>15s</td>
+													<td>1.88</td>
+													<td>66.7</td>
+												</tr>
+												<tr>
+													<td>0.5</td>
+													<td>30s</td>
+													<td>1.16</td>
+													<td>66.7</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>1mins</td>
+													<td>0.88</td>
+													<td>66.7</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</section>
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<ul class="copyright">
+								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/tab.js"></script>
+			<script src="assets/js/sizeTab.js"></script>
+			<script src="assets/js/connectivityTab.js"></script>
+			<script src="assets/js/blocktorrentTab.js"></script>
+			<script src="assets/js/spvTab.js"></script>
+			<script src="assets/js/minersTab.js"></script>
+
+	</body>
+</html>

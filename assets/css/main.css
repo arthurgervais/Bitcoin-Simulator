@@ -2525,7 +2525,7 @@
 		height: 3.75em;
 		letter-spacing: 0.1em;
 		line-height: 3.75em;
-		padding: 0 2.25em;
+		padding: 0 1.5em;
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -3701,3 +3701,26 @@
 		}
 
 	}
+	
+.tab {
+	margin: 0.25em 0.25em 0.25em 0.25em;
+	width: 21em;
+}
+
+.sizeTab {
+	margin: 0.2em 0.02em 0.2em 0.02em;
+	width: 7.2em;
+}
+
+.connectivityTab {
+	margin: auto;
+	width: 10em;
+}
+
+.blocktorrentTab {
+	margin: 0.2em auto 0.2em auto;
+}
+
+.spvTab {
+	margin: 0.2em auto 0.2em auto;
+}

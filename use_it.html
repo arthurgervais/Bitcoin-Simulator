@@ -36,6 +36,8 @@
 								<li><a href="get_started.html">Get Started</a></li>
 								<li><a href="Installation.html">Installation</a></li>
 								<li><a href="use_it.html">Use it</a></li>
+								<li><a href="https://github.com/vthglyk/Bitcoin-Simulation">Github</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -51,7 +53,7 @@
 						</header>
 
 						<!-- Content -->
-							<div class="wrapper">
+							<div class="wrapper style1">
 								<div class="inner">
 
 									<h3 class="major">Bitcoin Simulator</h3>
@@ -161,6 +163,71 @@
 										</table>
 									</div>
 									
+								</div>
+							</div>
+							
+							<div class="wrapper alt style2">
+								<div class="inner">
+
+									<h3 class="major">Optimal Adversarial Attacker</h3>
+									<p  style="font-size: 1.2em">The optimal adversarial attacker can also be configured via command line parameters. Below is presented a table of all the input parameters
+									along with their default values.</p>
+									<h3 class="major" style="text-align: center;">Input Parameters</h3>
+									<div class="table-wrapper" >
+										<table>
+											<thead style="font-size: 1.2em">
+												<tr>
+													<th>Parameter</th>
+													<th>Description</th>
+													<th>Default Value</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>blockIntervalMinutes</td>
+													<td>The average block generation interval in minutes.</td>
+													<td>10</td>
+												</tr>												<tr>
+													<td>noBlocks</td>
+													<td>The number of generated blocks</td>
+													<td>100</td>
+												</tr>
+												</tr>												<tr>
+													<td>ud</td>
+													<td>The transaction value which is double-spent. If ud = 0, the attacker follows the optimal strategy for selfish-mining. 
+													Otherwise, the attacker follows the optimal strategy for performing a double-spending attack of a transaction with value equals to ud.</td>
+													<td>0</td>
+												</tr>																								
+												<tr>
+													<td>r</td>
+													<td>The stale block rate</td>
+													<td>0</td>
+												</tr>												<tr>
+													<td>unsolicited</td>
+													<td>Change the miners block broadcast type to UNSOLICITED. Each newly mined block is broadcast immediately to all the peers of the miner who mined it.</td>
+													<td>false</td>
+												</tr>
+												<tr>
+													<td>relayNetwork</td>
+													<td>Change the miners block broadcast type to RELAY_NETWORK. The miners use a relay network for communicating among themselves and send compressed blocks.</td>
+													<td>false</td>
+												</tr>
+												<tr>
+													<td>unsolicitedRelayNetwork</td>
+													<td>Change the miners block broadcast type to UNSOLICITED_RELAY_NETWORK. The miners use a relay network among themselves 
+													and send compressed blocks and each newly mined block is broadcast immediately to all the peers of the miner who mined it.</td>
+													<td>false</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									
+									<b style="font-size:1.2em">Notes</b>
+									<ul style="font-size:1.2em">
+										<li>The number of miners, their hash rates and their locations can be changed by modifying the arrays <b><i>minersHash</i></b> and <b><i>minersRegions</i></b>. 
+										The attacker's hash rate is always the last value in <b><i>minersHash</i></b>.</li>
+										<li>To modify the optimal strategy, the <b><i>m_decisionMatrix</i></b> in <b><i>bitcoin-selfish-miner.h</i></b> must be updated accordingly.</li>
+									</ul>
 								</div>
 							</div>
 
