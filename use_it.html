@@ -85,8 +85,8 @@
 													<td>nodes</td>
 													<td>The total number of nodes in the network. The number of nodes should always be greater of equal 
 													to the number of miners. The number of miners, their hash rates and their locations can be changed 
-													by modifying the variables bitcoinMinersHash/litecoinMinersHash/dogecoinMinersHash and 
-													bitcoinMinersRegions/litecoinMinersRegions/dogecoinMinersRegions.</td>
+													by modifying the variables <b>bitcoinMinersHash/litecoinMinersHash/dogecoinMinersHash</b> and 
+													<b>bitcoinMinersRegions/litecoinMinersRegions/dogecoinMinersRegions</b>.</td>
 													<td>16</td>
 												</tr>
 												<tr>
@@ -98,7 +98,7 @@
 													<td>maxConnections</td>
 													<td>The maxConnectionsPerNode of the grid. If minConnections <= 0 
 													or maxConnections <=0, the nodes follow the connections distribution 
-													as described in https://cs.umd.edu/projects/coinscope/coinscope.pdf.</td>
+													as described in <a href="https://cs.umd.edu/projects/coinscope/coinscope.pdf">here</a>.</td>
 													<td>-1</td>
 												</tr>
 												<tr>
@@ -236,7 +236,17 @@
 				<!-- Footer -->
 					<section id="footer">
 						<div class="inner">
-							
+							<h3 class="major">Tutorial</h3>
+							<span style="font-size:1.2em">Here we demonstrate some basic examples of how you can use the simulator:</span>
+							<ul style="font-size:1.2em">
+								<li>If you want to run a simple Bitcoin simulation for 100 blocks and 6000 nodes, you can just enter the following command:</br>
+								<pre><code>./waf --run "bitcoin-test --noBlocks=100 --nodes=6000"</code></pre></li>
+								<li>If we want to start the simulation for 1000 blocks in LITECOIN mode and with a block size of 2MB we have to enter the following command:<br>
+								<pre><code>./waf --run "bitcoin-test --noBlocks=1000 --litecoin --blockSize=2000000"</code></pre></li>
+								<li>You can also use <b>mpi</b> to speed up the simulation:<br>
+								<pre><code>mpirun -n 2 ./waf --run "bitcoin-test --noBlocks=1000 --litecoin --blockSize=2000000"</code></pre></li>
+							</ul>							
+
 							<ul class="copyright">
 								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>

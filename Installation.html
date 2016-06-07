@@ -57,14 +57,19 @@
 								<div class="inner">
 									<h3 class="major" style="font-size: 1.6em">Installation Steps</h3>
 									<ol style="font-size: 1.2em">
-										<li>Clone the <a href="https://github.com/vthglyk/Bitcoin-Simulation">Bitcoin Simulator</a>.</li>
+										<li>Clone the <a href="https://github.com/vthglyk/Bitcoin-Simulation.git">Bitcoin Simulator</a>.</li>
 										<li>The Bitcoin Simulator is built on <b>ns3</b> and it has been tested with versions 3.24 and 3.25.
 											So, go to the <a href="https://www.nsnam.org/">official site</a> and grab a suitable release. Detailed installation instructions
 											for various platforms can be found <a href="https://www.nsnam.org/wiki/Installation">here</a>.</li>
-										<li>For exhanging block messages, <b>rapidjson</b> is used. Download it from  <a href="https://github.com/miloyip/rapidjson">here</a>.</li>
-										<li>Create a new directory named <i>rapidjson</i> under <i>ns-allinone-3.xx/ns-3.xx</i>.</li>
-										<li>Copy the contents of the directory <i>include/rapidjson</i> (from the downloaded rapidjson project in step 2)
-  										    to the newly created rapidjson folder (<i>ns-allinone-3.xx/ns-3.xx/rapidjson</i>)</li>
+										<li>Untar it with the following command:<br>
+											<code>tar xvfj ns-allinone-3.25.tar.bz2</code>
+										<li>For exhanging block messages, <b>rapidjson</b> is used. Download it from  <a href="https://github.com/miloyip/rapidjson.git">here</a>.</li>
+										<li>Create a new directory named <b>rapidjson</b> under <b>ns-allinone-3.xx/ns-3.xx</b> and copy the 
+											contents of the directory <b>include/rapidjson</b> (from the downloaded rapidjson project in step 4)
+  										    to the newly created rapidjson folder (<b>ns-allinone-3.xx/ns-3.xx/rapidjson</b>). You also have to 
+											copy all the files from <b>Bitcoin-Simulation</b> to the respective folders under <b>ns-allinone-3.xx/ns-3.xx/</b>. All the above
+											can be done automatically by the provided <b>copy-to-ns3.sh</b> script.</li>
+
 										<li>Update the <b>ns-allinone-3.xx/ns-3.xx/src/applications/wscript</b>.
 											<ul>
 												<li> Add the following lines in <b>module.source</b>:
@@ -76,7 +81,7 @@
 'model/bitcoin-selfish-miner-trials.cc',
 'helper/bitcoin-topology-helper.cc',
 'helper/bitcoin-node-helper.cc',
-'helper/bitcoin-miner-helper.cc'					</code></pre>
+'helper/bitcoin-miner-helper.cc',					</code></pre>
 												</li>
 												<li> Add the following lines in <b>headers.source</b>:
 													<pre><code>'model/bitcoin.h',
@@ -87,24 +92,23 @@
 'model/bitcoin-selfish-miner-trials.h',
 'helper/bitcoin-topology-helper.h',
 'helper/bitcoin-node-helper.h',
-'helper/bitcoin-miner-helper.h'					</code></pre>
+'helper/bitcoin-miner-helper.h',					</code></pre>
 												</li>
 											</ul>
 										</li>
 										<li>Update the <b>ns-allinone-3.xx/ns-3.xx/src/internet/wscript</b>.
 											<ul>
-												<li> Add the following line in <b>module.source</b>:
-													<pre><code>'helper/ipv4-address-helper-custom.cc'</code></pre>
+												<li> Add the following line in <b>obj.source</b>:
+													<pre><code>'helper/ipv4-address-helper-custom.cc',</code></pre>
 												</li>
 												<li> Add the following line in <b>headers.source</b>:
-													<pre><code>'helper/ipv4-address-helper-custom.h'</code></pre>
+													<pre><code>'helper/ipv4-address-helper-custom.h',</code></pre>
 												</li>
 											</ul>
 										</li>
-										<li>Copy all the files from <b>Bitcoin-Simulation/src</b> to the respective folder under <b>ns-allinone-3.xx/ns-3.xx/src/</b>.</li>
 										<li>Configure ns3 with the follow command to ensure compatibility and maximum performance. 
 											<pre><code>CXXFLAGS="-std=c++11" ./waf configure --build-profile=optimized --out=build/optimized --with-pybindgen=/home/bill/Desktop/workspace/ns-allinone-3.24/pybindgen-0.17.0.post41+ngd10fa60 --enable-mpi --enable-static</code></pre></li>
-										<li>Rebuild ns3 using the <code>./waf</code> command.</li>
+										<li>Build ns3 using the <code>./waf</code> command.</li>
 									</ol>
 
 								</div>
@@ -116,7 +120,7 @@
 					<section id="footer">
 						<div class="inner">
 							<h2 class="major">Installation Tutorial</h2>
-							<p>Did you get confused? Don't worry; you can watch our installation tutorial for a more concrete demonstration. </p>
+							<p style="font-size: 1.2em">Did you get confused? Don't worry! You can watch our installation tutorial for a more concrete demonstration. </p>
 							<ul class="copyright">
 								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
