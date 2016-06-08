@@ -3322,7 +3322,9 @@
 			margin: 0 auto;
 			width: 55em;
 		}
-
+		.wrapper .inner p{
+			font-size:1.2em;
+		}
 		.wrapper.style2 {
 			background-color: #353849;
 		}
