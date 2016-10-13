@@ -9,7 +9,7 @@ We provide you with a detailed [installation guide](http://arthurgervais.github.
 
 The Bitcoin-Simulator was developed as part of the following publication in CCS'16: 
 
-On the Security and Performance of Proof of Work Blockchains
+[On the Security and Performance of Proof of Work Blockchains](https://eprint.iacr.org/2016/555.pdf)
 
 ```latex
 @inproceedings{gervais2016security,
