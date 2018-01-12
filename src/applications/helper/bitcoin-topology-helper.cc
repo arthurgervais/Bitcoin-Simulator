@@ -1116,11 +1116,14 @@ BitcoinTopologyHelper::BitcoinTopologyHelper (uint32_t noCpus, uint32_t totalNoN
 		
 		if (m_latencyParetoShapeDivider > 0)
         {
+          double shape = m_regionLatencies[m_bitcoinNodesRegion[(m_nodes.at (*miner).Get (0))->GetId()]] [m_bitcoinNodesRegion[(m_nodes.at (*it).Get (0))->GetId()]] / m_latencyParetoShapeDivider;
+          double mean = m_regionLatencies[m_bitcoinNodesRegion[(m_nodes.at (*miner).Get (0))->GetId()]] [m_bitcoinNodesRegion[(m_nodes.at (*it).Get (0))->GetId()]];
+          // mean = (shape * scale) / (shape - 1)
+          double scale = mean * (shape - 1) / shape;
+
           Ptr<ParetoRandomVariable> paretoDistribution = CreateObject<ParetoRandomVariable> ();
-          paretoDistribution->SetAttribute ("Mean", DoubleValue (m_regionLatencies[m_bitcoinNodesRegion[(m_nodes.at (*miner).Get (0))->GetId()]]
-                                                                                  [m_bitcoinNodesRegion[(m_nodes.at (*it).Get (0))->GetId()]]));
-          paretoDistribution->SetAttribute ("Shape", DoubleValue (m_regionLatencies[m_bitcoinNodesRegion[(m_nodes.at (*miner).Get (0))->GetId()]]
-                                                                                   [m_bitcoinNodesRegion[(m_nodes.at (*it).Get (0))->GetId()]] / m_latencyParetoShapeDivider));
+          paretoDistribution->SetAttribute ("Scale", DoubleValue (scale));
+          paretoDistribution->SetAttribute ("Shape", DoubleValue (shape));
           latencyStringStream << paretoDistribution->GetValue() << "ms";
         }
         else
@@ -1174,10 +1177,13 @@ BitcoinTopologyHelper::BitcoinTopologyHelper (uint32_t noCpus, uint32_t totalNoN
 		if (m_latencyParetoShapeDivider > 0)
         {
           Ptr<ParetoRandomVariable> paretoDistribution = CreateObject<ParetoRandomVariable> ();
-          paretoDistribution->SetAttribute ("Mean", DoubleValue (m_regionLatencies[m_bitcoinNodesRegion[(m_nodes.at (node.first).Get (0))->GetId()]]
-                                                                                  [m_bitcoinNodesRegion[(m_nodes.at (*it).Get (0))->GetId()]]));
-          paretoDistribution->SetAttribute ("Shape", DoubleValue (m_regionLatencies[m_bitcoinNodesRegion[(m_nodes.at (node.first).Get (0))->GetId()]]
-                                                                                   [m_bitcoinNodesRegion[(m_nodes.at (*it).Get (0))->GetId()]] / m_latencyParetoShapeDivider));
+          double shape = m_regionLatencies[m_bitcoinNodesRegion[(m_nodes.at (node.first).Get (0))->GetId()]] [m_bitcoinNodesRegion[(m_nodes.at (*it).Get (0))->GetId()]] / m_latencyParetoShapeDivider;
+          double mean = m_regionLatencies[m_bitcoinNodesRegion[(m_nodes.at (node.first).Get (0))->GetId()]] [m_bitcoinNodesRegion[(m_nodes.at (*it).Get (0))->GetId()]];
+          // mean = (shape * scale) / (shape - 1)
+          double scale = mean * (shape - 1) / shape;
+
+          paretoDistribution->SetAttribute ("Scale", DoubleValue (scale));
+          paretoDistribution->SetAttribute ("Shape", DoubleValue (shape));
           latencyStringStream << paretoDistribution->GetValue() << "ms";
         }
         else
