@@ -31,6 +31,7 @@
 #include "ipv4-address-helper-custom.h"
 #include "ns3/bitcoin.h"
 #include <random>
+#include <array>
 
 namespace ns3 {
 
