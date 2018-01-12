@@ -3,6 +3,7 @@
 
 #include "bitcoin-node.h"
 #include <random>
+#include <array>
 
 namespace ns3 {
 
