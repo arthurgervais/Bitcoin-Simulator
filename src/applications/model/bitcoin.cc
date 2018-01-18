@@ -787,6 +787,7 @@ enum BitcoinRegion getBitcoinEnum(uint32_t n)
     case 4: return JAPAN;
     case 5: return AUSTRALIA;
     case 6: return OTHER;
+    default: return OTHER;
   }
 }
 }// Namespace ns3
