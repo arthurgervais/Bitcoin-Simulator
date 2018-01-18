@@ -1126,7 +1126,7 @@ BitcoinSelfishMiner::ReadActionMatrix(enum ForkType f, int la, int lh)
     case 'w': return WAIT;
     case 'e': return EXIT;
     case '*': return ERROR;
-
+    default: return ERROR;
   }
 }
 
@@ -1151,7 +1151,7 @@ const char* getAction(enum Action m)
     case WAIT: return "WAIT";
     case EXIT: return "EXIT";
     case ERROR: return "ERROR";
-
+    default: return "ERROR";
   }
 }
 
