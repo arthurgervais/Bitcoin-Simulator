@@ -159,8 +159,7 @@ main (int argc, char *argv[])
   
   if (litecoin)
   {
-    averageBlockGenIntervalMinutes =  2.5;
-    totalNoNodes = 1000;
+    totalNoNodes = 24;
     cryptocurrency = LITECOIN;
 	
     noMiners = sizeof(litecoinMinersHash)/sizeof(double);
@@ -175,13 +174,12 @@ main (int argc, char *argv[])
   }
   else if (dogecoin)
   {
-    averageBlockGenIntervalMinutes =  1;
-	totalNoNodes = 650;
+	  totalNoNodes = 24;
     cryptocurrency = DOGECOIN;
 	
     noMiners = sizeof(dogecoinMinersHash)/sizeof(double);
     minersHash = new double[noMiners];
-	minersRegions = new enum BitcoinRegion[noMiners];
+	  minersRegions = new enum BitcoinRegion[noMiners];
 	
     for(int i = 0; i < noMiners; i++)
     {
@@ -192,7 +190,7 @@ main (int argc, char *argv[])
   else
   {
     minersHash = new double[noMiners];
-	minersRegions = new enum BitcoinRegion[noMiners];
+	  minersRegions = new enum BitcoinRegion[noMiners];
 	
     for(int i = 0; i < noMiners/16; i++)
     {
