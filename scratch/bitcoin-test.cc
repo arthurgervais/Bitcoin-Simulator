@@ -162,8 +162,8 @@ main (int argc, char *argv[])
     for(int i = 0; i < noMiners/12; i++) {
       for(int j = 0; j < 12; j++)
       {
-        minersHash[i*12 + j] = litecoinMinersHash[i]*12/noMiners;
-        minersRegions[i*12 + j] = litecoinMinersRegions[i];
+        minersHash[i*12 + j] = litecoinMinersHash[j]*12/noMiners;
+        minersRegions[i*12 + j] = litecoinMinersRegions[j];
       }	  
     }
   }
@@ -178,8 +178,8 @@ main (int argc, char *argv[])
     for(int i = 0; i < noMiners/12; i++) {
       for(int j = 0; j < 12; j++)
       {
-        minersHash[i*12 + j] = dogecoinMinersHash[i]*12/noMiners;
-        minersRegions[i*12 + j] = dogecoinMinersRegions[i];
+        minersHash[i*12 + j] = dogecoinMinersHash[j]*12/noMiners;
+        minersRegions[i*12 + j] = dogecoinMinersRegions[j];
       }	
     }
   }
