@@ -144,12 +144,6 @@ main (int argc, char *argv[])
   cmd.AddValue ("spv", "Enable the spv mechanism", spv);
 
   cmd.Parse(argc, argv);
- 
-  if (noMiners % 16 != 0)
-  {
-    std::cout << "The number of miners must be multiple of 16" << std::endl;
-	return 0;
-  }
   
   if (litecoin && dogecoin)
   {
@@ -159,33 +153,35 @@ main (int argc, char *argv[])
   
   if (litecoin)
   {
-    totalNoNodes = 24;
+    totalNoNodes = 256;
     cryptocurrency = LITECOIN;
 	
-    noMiners = sizeof(litecoinMinersHash)/sizeof(double);
-    minersHash = new double[noMiners];
-	minersRegions = new enum BitcoinRegion[noMiners];
-	
-    for(int i = 0; i < noMiners; i++)
-    {
-      minersHash[i] = litecoinMinersHash[i];
-      minersRegions[i] = litecoinMinersRegions[i];
-    }	  
-  }
-  else if (dogecoin)
-  {
-	  totalNoNodes = 24;
-    cryptocurrency = DOGECOIN;
-	
-    noMiners = sizeof(dogecoinMinersHash)/sizeof(double);
     minersHash = new double[noMiners];
 	  minersRegions = new enum BitcoinRegion[noMiners];
 	
-    for(int i = 0; i < noMiners; i++)
-    {
-      minersHash[i] = dogecoinMinersHash[i];
-      minersRegions[i] = dogecoinMinersRegions[i];
-    }	
+    for(int i = 0; i < noMiners/12; i++) {
+      for(int j = 0; j < 12; j++)
+      {
+        minersHash[i*12 + j] = litecoinMinersHash[i]*12/noMiners;
+        minersRegions[i*12 + j] = litecoinMinersRegions[i];
+      }	  
+    }
+  }
+  else if (dogecoin)
+  {
+	  totalNoNodes = 256;
+    cryptocurrency = DOGECOIN;
+	
+    minersHash = new double[noMiners];
+	  minersRegions = new enum BitcoinRegion[noMiners];
+	
+    for(int i = 0; i < noMiners/12; i++) {
+      for(int j = 0; j < 12; j++)
+      {
+        minersHash[i*12 + j] = dogecoinMinersHash[i]*12/noMiners;
+        minersRegions[i*12 + j] = dogecoinMinersRegions[i];
+      }	
+    }
   }
   else
   {
