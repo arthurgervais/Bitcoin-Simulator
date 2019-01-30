@@ -144,12 +144,6 @@ main (int argc, char *argv[])
   cmd.AddValue ("spv", "Enable the spv mechanism", spv);
 
   cmd.Parse(argc, argv);
- 
-  if (noMiners % 16 != 0)
-  {
-    std::cout << "The number of miners must be multiple of 16" << std::endl;
-	return 0;
-  }
   
   if (litecoin && dogecoin)
   {
@@ -159,40 +153,40 @@ main (int argc, char *argv[])
   
   if (litecoin)
   {
-    averageBlockGenIntervalMinutes =  2.5;
-    totalNoNodes = 1000;
+    totalNoNodes = 256;
     cryptocurrency = LITECOIN;
 	
-    noMiners = sizeof(litecoinMinersHash)/sizeof(double);
     minersHash = new double[noMiners];
-	minersRegions = new enum BitcoinRegion[noMiners];
+	  minersRegions = new enum BitcoinRegion[noMiners];
 	
-    for(int i = 0; i < noMiners; i++)
-    {
-      minersHash[i] = litecoinMinersHash[i];
-      minersRegions[i] = litecoinMinersRegions[i];
-    }	  
+    for(int i = 0; i < noMiners/12; i++) {
+      for(int j = 0; j < 12; j++)
+      {
+        minersHash[i*12 + j] = litecoinMinersHash[j]*12/noMiners;
+        minersRegions[i*12 + j] = litecoinMinersRegions[j];
+      }	  
+    }
   }
   else if (dogecoin)
   {
-    averageBlockGenIntervalMinutes =  1;
-	totalNoNodes = 650;
+	  totalNoNodes = 256;
     cryptocurrency = DOGECOIN;
 	
-    noMiners = sizeof(dogecoinMinersHash)/sizeof(double);
     minersHash = new double[noMiners];
-	minersRegions = new enum BitcoinRegion[noMiners];
+	  minersRegions = new enum BitcoinRegion[noMiners];
 	
-    for(int i = 0; i < noMiners; i++)
-    {
-      minersHash[i] = dogecoinMinersHash[i];
-      minersRegions[i] = dogecoinMinersRegions[i];
-    }	
+    for(int i = 0; i < noMiners/12; i++) {
+      for(int j = 0; j < 12; j++)
+      {
+        minersHash[i*12 + j] = dogecoinMinersHash[j]*12/noMiners;
+        minersRegions[i*12 + j] = dogecoinMinersRegions[j];
+      }	
+    }
   }
   else
   {
     minersHash = new double[noMiners];
-	minersRegions = new enum BitcoinRegion[noMiners];
+	  minersRegions = new enum BitcoinRegion[noMiners];
 	
     for(int i = 0; i < noMiners/16; i++)
     {
